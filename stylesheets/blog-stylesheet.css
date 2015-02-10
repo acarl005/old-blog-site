@@ -9,8 +9,7 @@ h4 {
 }
 
 img {
-  border-top: black 4px solid;
-  border-bottom: black 4px solid;
+  border: #0000cc 4px solid;
   padding: 10 px;
 }
 
