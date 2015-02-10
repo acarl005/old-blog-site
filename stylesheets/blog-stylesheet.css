@@ -8,6 +8,12 @@ h4 {
   font-family: arial;
 }
 
-p {
-  margin-left: 10%;
+img {
+  border-top: black 4px solid;
+  border-bottom: black 4px solid;
+  padding: 10 px;
+}
+
+p{
+  margin-left: 40px
 }
