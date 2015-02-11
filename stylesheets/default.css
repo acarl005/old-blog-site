@@ -1,0 +1,35 @@
+header {
+  background-color: #7F12E8;
+  height: 1.3em;
+  width: 101.5%;
+  margin-top: -8px;
+  margin-left: -8px;
+  font-size: 4em;
+  color: white;
+  text-align: center;
+  font-family: Open Sans, Arial;
+  padding: 3px;
+}
+
+header span {
+  font-size: 0.75em;
+  color: #cacad4;
+}
+
+div {
+  background-color: #5a5a5e;
+  display: inline-block;
+  width: 16.3%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  color: white;
+  font-family: Oswald, Arial;
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 5px;
+}
+
+.nav:hover {
+  background-color: white;
+  color: #5a5a5e;
+}
