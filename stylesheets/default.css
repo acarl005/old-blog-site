@@ -33,3 +33,8 @@ div {
   background-color: white;
   color: #5a5a5e;
 }
+
+#face {
+  margin-top: 20px;
+  display: inline-block;
+}
