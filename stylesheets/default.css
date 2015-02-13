@@ -1,37 +1,97 @@
-header {
-  background-color: #7F12E8;
-  height: 1.3em;
-  width: 101.5%;
-  margin-top: -8px;
-  margin-left: -8px;
-  font-size: 4em;
-  color: white;
-  text-align: center;
-  font-family: Open Sans, Arial;
-  padding: 3px;
+body {
+  margin:0;
 }
 
-header span {
-  font-size: 0.75em;
-  color: #cacad4;
+nav {
+  background: #063336;
+  background: linear-gradient(to bottom, #031D1F, #0E8187);
+  width: 1282px;
 }
 
-div {
-  background-color: #5a5a5e;
+nav a {
+  position: relative;
   display: inline-block;
-  width: 16.3%;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  width: 210px;
+  height: 2em;
+  font-family: raleway, sans-serif;
   color: white;
-  font-family: Oswald, Arial;
   text-align: center;
-  font-size: 1.5em;
-  margin-top: 5px;
+  font-size: 2em;
+  text-decoration: none;
+  padding-top: 1em;
 }
 
-.nav:hover {
-  background-color: white;
-  color: #5a5a5e;
+nav a:hover {
+  color: #FF3900;
+}
+
+nav a:active {
+  background: #031D1F;
+  background: linear-gradient(to bottom, #0E8187, #031D1F);
+}
+
+footer {
+  display: block;
+  background: #0E8187;
+  position: fixed;
+  bottom: 0px;
+  width: 1282px;
+}
+
+footer ul {
+  margin-right: 50px;
+  margin-top: 0;
+  margin-bottom: 0;
+  float: right;
+}
+
+footer li {
+  list-style-type: none;
+  display: inline-block;
+  padding-top: 5px;
+  padding-right: 15px;
+}
+
+footer img {
+  max-width: 40px;
+  height:auto;
+}
+
+.hello {
+  margin: auto;
+  margin-bottom: 1000px;
+  display: block;
+  width: 1000px;
+  border: solid 2px black;
+  border-radius: 10px;
+  font-family: verdana;
+  color: #0E8187;
+  background-color: #E0E0EB;
+  padding: 10px;
+}
+
+#hex {
+  width: 1282px;
+  height: 20em;
+  background: url("../imgs/bg.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+#hex h1 {
+  color: white;
+  font-size: 50px;
+  margin: 0;
+  position: relative;
+  top: 35px;
+  text-align: center;
+  font-family: open sans, arial;
+}
+
+#hex h1 span {
+  font-size: 40px;
+  color: #C2C2D6;
 }
 
 #face {
