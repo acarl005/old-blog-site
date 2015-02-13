@@ -38,6 +38,7 @@ nav a:active {
 footer {
   display: block;
   background: #0E8187;
+  background: linear-gradient(to bottom, #0E8187, #031D1F);
   position: fixed;
   bottom: 0px;
   width: 1282px;
@@ -145,6 +146,26 @@ h2 {
 .white-box-2 p, .white-box-2 h2, .white-box-2 b {
  position: relative;
  left: 20px;
+}
+
+.white-box-3 {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid gray;
+  width: 300px;
+  font-family: avenir;
+  margin-bottom: 20px;
+  margin-right: 50px;
+  position: relative;
+  text-align: center;
+}
+
+.white-box-3 h4 {
+  font-weight: bold;
+}
+
+.white-box-3 a:hover {
+
 }
 
 #hex {
