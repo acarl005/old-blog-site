@@ -2,6 +2,11 @@ body {
   margin:0;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 nav {
   background: #063336;
   background: linear-gradient(to bottom, #031D1F, #0E8187);
@@ -57,17 +62,89 @@ footer img {
   height:auto;
 }
 
+footer div {
+  width: 200px;
+  position: absolute;
+  margin-top: 18px;
+  margin-left: 10px;
+}
+
+footer div a {
+  color: white;
+  font-family: raleway, arial;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+aside {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid gray;
+  width: 200px;
+  font-family: avenir;
+  float: right;
+  position: relative;
+  margin-right: 100px;
+}
+
 .hello {
   margin: auto;
-  margin-bottom: 1000px;
+  margin-bottom: 100px;
   display: block;
   width: 1000px;
-  border: solid 2px black;
-  border-radius: 10px;
-  font-family: verdana;
-  color: #0E8187;
+  font-family: avenir;
   background-color: #E0E0EB;
   padding: 10px;
+}
+
+h2 {
+  color: #0E8187;
+}
+
+.backed {
+  width: 1282px;
+  height:1000px;
+  position: fixed;
+  background-image: url(../imgs/bg2.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  z-index: -1;
+}
+
+.content-wrap {
+  display: block;
+  position: relative;
+  top: 60px;
+  left: 150px;
+  margin-bottom: 100px;
+  width: 1130px;
+}
+
+.white-box {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid gray;
+  width: 960px;
+  font-family: avenir;
+  position: relative;
+}
+
+.white-box article {
+  position: relative;
+  left: 20px;
+  width: 920px;
+}
+
+.white-box-2 {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid gray;
+  width: 760px;
+  font-family: avenir;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.white-box-2 p, .white-box-2 h2, .white-box-2 b {
+ position: relative;
+ left: 20px;
 }
 
 #hex {
