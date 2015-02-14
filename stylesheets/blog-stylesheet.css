@@ -70,11 +70,11 @@ footer img {
 footer div {
   width: 200px;
   position: absolute;
-  margin-top: 18px;
+  margin-top: 0;
   margin-left: 10px;
 }
 
-footer div a {
+footer div h4 {
   color: white;
   font-family: raleway, arial;
   font-size: 12px;
