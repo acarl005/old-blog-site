@@ -91,6 +91,14 @@ aside {
   display: block;
 }
 
+aside h2, aside h4 {
+  margin-left: 20px;
+}
+
+aside h6, aside h4 {
+  margin-bottom: 0;
+}
+
 h2 {
   color: #0E8187;
 }

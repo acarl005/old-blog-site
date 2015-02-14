@@ -149,7 +149,7 @@ h2 {
 }
 
 .white-box-3 {
-  display: inline-block;
+  float: left;
   background-color: rgba(255, 255, 255, 0.7);
   border: 1px solid gray;
   width: 300px;
@@ -171,6 +171,10 @@ h2 {
 
 .white-box-3 a:hover {
   color: #0E8187;
+}
+
+#fwb {
+  position: relative;
 }
 
 #hex {
