@@ -103,10 +103,10 @@ h2 {
 
 .backed {
   width: 1282px;
-  height:1000px;
+  height: 2500px;
   position: fixed;
   background-image: url(../imgs/bg2.jpg);
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-size: 100% auto;
   z-index: -1;
 }
@@ -143,7 +143,7 @@ h2 {
   position: relative;
 }
 
-.white-box-2 p, .white-box-2 h2, .white-box-2 b {
+.white-box-2 p, .white-box-2 h2, .white-box-2 b, .white-box-2 h3, .white-box-2 h4 {
  position: relative;
  left: 20px;
 }
@@ -164,8 +164,13 @@ h2 {
   font-weight: bold;
 }
 
-.white-box-3 a:hover {
+.white-box-3 a {
+  text-decoration: none;
+  color:  #0099ff;
+}
 
+.white-box-3 a:hover {
+  color: #0E8187;
 }
 
 #hex {
