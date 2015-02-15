@@ -48,7 +48,6 @@ footer ul {
   margin-right: 50px;
   margin-top: 0;
   margin-bottom: 0;
-  float: right;
 }
 
 footer li {
@@ -67,7 +66,7 @@ footer div {
   width: 200px;
   position: absolute;
   top: 0;
-  left: 10px;
+  right: 100px;
 }
 
 footer div h4 {
