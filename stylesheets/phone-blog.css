@@ -1,0 +1,189 @@
+body {
+  margin: auto;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color:  #0099ff;
+}
+
+a:hover {
+  color: #0E8187;
+}
+
+nav {
+  background: #063336;
+  background: linear-gradient(to bottom, #031D1F, #0E8187);
+  width: 100%;
+}
+
+nav a {
+  position: relative;
+  display: inline-block;
+  width: 32.5%;
+  height: 1.2em;
+  font-family: raleway, sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 1em;
+  text-decoration: none;
+  padding-top: 5px;
+}
+
+nav a:hover {
+  color: #FF3900;
+}
+
+nav a:active {
+  background: #031D1F;
+  background: linear-gradient(to bottom, #0E8187, #031D1F);
+}
+
+footer {
+  display: block;
+  background: #0E8187;
+  background: linear-gradient(to bottom, #0E8187, #031D1F);
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
+footer ul {
+  padding-left: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+footer li {
+  list-style-type: none;
+  display: inline-block;
+  padding-top: 5px;
+  padding-right: 5px;
+}
+
+footer img {
+  max-width: 40px;
+  height:auto;
+}
+
+footer div {
+  width: 60px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+footer div h4 {
+  color: white;
+  font-family: raleway, arial;
+  font-size: 12px;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+aside {
+  display: none;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid gray;
+  width: 180px;
+  font-family: avenir;
+  float: right;
+  margin-right: 40px;
+}
+
+aside h2, aside h4 {
+  margin-left: 20px;
+}
+
+aside h6, aside h4 {
+  margin-bottom: 0;
+}
+
+h2 {
+  color: #0E8187;
+}
+
+.backed {
+  width: 960px;
+  height: 2500px;
+  position: fixed;
+  background-image: url(../imgs/bg2.jpg);
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  z-index: -1;
+}
+
+.content-wrap {
+  display: block;
+  position: relative;
+  top: 60px;
+  left: 20px;
+  margin-bottom: 100px;
+  width: 90%;
+}
+
+.white-box {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid gray;
+  width: 810px;
+  font-family: avenir;
+  position: relative;
+}
+
+.white-box article {
+  position: relative;
+  left: 20px;
+  width: 770px;
+}
+
+.white-box-2 {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid gray;
+  width: 95%;
+  font-family: avenir;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.white-box-2 p, .white-box-2 h2, .white-box-2 b, .white-box-2 h3, .white-box-2 h4 {
+ position: relative;
+ left: 20px;
+ margin-right: 40px;
+}
+
+.white-box-2 h3 {
+  color: gray;
+}
+
+.white-box-2 ol {
+  display: none;
+}
+
+.white-box-3 {
+  float: left;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid gray;
+  width: 240px;
+  font-family: avenir;
+  margin-bottom: 20px;
+  margin-right: 28px;
+  position: relative;
+  text-align: center;
+}
+
+.white-box-3 h4 {
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  display: block;
+}
+
+h6 {
+  text-align: center;
+  margin-top: 5px;
+}
