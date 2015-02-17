@@ -23,8 +23,8 @@
     <aside>
       <h2>Other Posts</h2>
       <h4>Programming</h4>
-      <h6><a href="t3-arrays-hashes.html">Ruby Data Structures</a></h6>
-      <h6>Displaying Content in HTML/CSS</h6>
+      <h6>Ruby Data Structures</h6>
+      <h6><a href="t2-css-design.html">Displaying Content in HTML/CSS</a></h6>
       <h6><a href="t1-git-blog.html">Git and Github</a></h6>
       <h4>Science</h4>
       <h6><a href="s1-teixobactin.html">Teixobactin</a></h6>
@@ -35,18 +35,18 @@
 
     <section class="white-box-2" id="t2">
 
-      <h2>Displaying Content in HTML/CSS</h2>
-      <h3>Padding, Borders, and Margins</h3>
-      <h4><em>Feb 11, 2015</em></h4>
-      <img src="http://img2.wikia.nocookie.net/__cb20110115132335/finalfantasy/images/3/36/FF3-DarkKnight.png" />
+      <h2>Ruby Data Structures</h2>
+      <h3>Arrays vs. Hashes</h3>
+      <h4><em>Feb 16, 2015</em></h4>
+      <img style="max-width: 30%; height:auto"src="http://technorians.com/wp-content/uploads/2013/04/Folder-icon.png" />
 
       <p>
-        Ever wonder how stuff is positioned on a webpage? <del>So do I.</del> It's done with padding, borders, and margins. Imagine the webpage as a party of knights, where each knight is a picture, paragraph, or piece of web content! Each knight has a suit of armor, like the borders on a website. These help make things look nice and organized. But inside these borders is padding, space separating the borders from the content. This is like the clothes beneath the knight's armor!
+        Ruby has objects similar to other languages: numbers, strings, and booleans. Two of the data structures I want to talk about in this post are arrays and hashes! Imagine an array as a stack of papers. On each paper is an object. It can be an integer, string, or even an array! Each page in the stack can be easily referenced by its page number, denoted by an integer.
       </p>
-      <img src="imgs/box-model.gif">
-      <h6>Visualizing this model.</h6>
+      <img src="imgs/arrayhash.png">
+      <h6>An example of an array and a hash.</h6>
       <p>
-        Finally, imagine they have a force field around them that keeps walls and other knights at a distance. These are the margins. The margins are the outermost separation, pushing away from the rest of the elements. The content and the border are the only parts that are actually visible though. Together, these map out a webpage to make it look polished and pretty!
+        Hashes are a bit more conceptually complex, but very analogous. Now imagine a stack of folders, each with only one page within it. These folders have a tab at the top on which any object can be written. It's similar to an array, but instead of these contents being referenced by an integer, or page number, it can be referenced by any object, or "key". Arrays are convenient because they can be sorted. However, inserting into sorted arrays is expensive, requiring <em>O(n)</em> time. Inserting into hashes is much more efficient!
       </p>
 
     </section>
