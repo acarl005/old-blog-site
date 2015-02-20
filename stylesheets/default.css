@@ -217,3 +217,11 @@ h2 {
 #snow {
   max-width: 100%
 }
+
+#cont {
+  opacity: 0.6;
+}
+
+#cont:hover {
+  opacity: 1;
+}
