@@ -33,6 +33,7 @@ nav a {
 
 nav a:hover {
   color: #FF3900;
+  background: linear-gradient(to bottom, #0E8187, #031D1F);
 }
 
 nav a:active {
@@ -65,6 +66,13 @@ footer li {
 footer img {
   max-width: 40px;
   height:auto;
+  transition-duration: 2s;
+}
+
+footer img:hover {
+  -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
 }
 
 footer div {
