@@ -23,10 +23,10 @@
     <aside>
       <h2>Other Posts</h2>
       <h4>Programming</h4>
-      <h6><a href="t4-enumerable-methods.html">Enumerable Methods</a></h6>
+      <h6>Enumerable Methods</h6>
       <h6><a href="t3-arrays-hashes.html">Ruby Data Structures</a></h6>
       <h6><a href="t2-css-design.html">Displaying Content in HTML/CSS</a></h6>
-      <h6>Git and Github</h6>
+      <h6><a href="t1-git-blog.html">Git and Github</a></h6>
       <h4>Science</h4>
       <h6><a href="s2-prop-65.html">California Prop. 65</a></h6>
       <h6><a href="s1-teixobactin.html">Teixobactin</a></h6>
@@ -36,26 +36,27 @@
       <h6><a href="c1-chefs-kitchen.html">Kitchen vs. Table Mindset</a></h6>
     </aside>
 
-    <section class="white-box-2" id="t1">
+    <section class="white-box-2" id="t4">
 
-      <h2>Git and Github</h2>
-      <h3>The Version Control Cushion</h3>
-      <h4><em>Feb 7, 2015</em></h4>
-      <img src="imgs/git-branch.png">
-
-      <p>
-        My cat and I usually get along fabulously. But when it gets cold and Samson spots the alluring warmth of my laptop, he will gracefully disregard the possibility that I may be writing an important essay. On one occasion, by a grand convergence of unlikely keystroke combinations, he selected the whole masterpiece, replaced it with the letters "fdvfxv," and saved the document. My seven hour investment was sorely lost. <strong>How could I have prevented this?</strong>
-      </p>
-
-      <img src="imgs/cat.jpg" style="max-width: 40%; height: auto">
-      <h6>My cat and I, when on good terms.</h6>
+      <h2>Enumerable Methods</h2>
+      <h3>The Power of Container Objects</h3>
+      <h4><em>Feb 22, 2015</em></h4>
+      <img src="" />
 
       <p>
-        Other than casting Samson into oblivion, I could have used <em>version control software</em>. Git is an example of this. It remembers every saved, i.e. "committed," version of a file, allowing the user to return to a previously saved iteration of the file in case something goes awry. Hence, I would've been able to recover my 2000 word essay as it was before being replaced by my cat's nonsense. It has other uses as well, such as allowing the user to create multiple divergent branches of their project.
+        The <code>Enumerable</code> module is one of the hallmarks of Ruby. It's an assortment of methods for container objects, like arrays and hashes which I talked about in my previous blog post. These methods streamline the process of performing operations on each of the elements within a container object. The crux of <code>Enumerable</code> is that its inclusion to a class requires an <code>each</code> method for that class, because enumerable methods call <code>each</code>. For example the <code>each</code> method for <code>Array</code> looks something like this:
       </p>
+      <img src="imgs/arrayself.png">
+      <h6>The <code>each</code> method in action.</h6>
       <p>
-        <a href="https://www.github.com">Github</a> is another tool that has captivated the hearts of programmers. Github is a website that connects projects together, allowing multiple people to clone files, make changes, and add their changes concurrently! It makes programming a much more collaborative endeavor. It can also serve as a portfolio, showcasing one's achievements and contributions. Overall, it's like LinkedIn for programmers!
+        Each element in the array gets yielded to a code block. In the example above, <code>each</code> is called to <code>puts</code> each integer in the array incremented by one. One of the most useful <code>Enumerable</code> methods is <code>map</code>. This stores each output in a new array.
       </p>
+      <img src="imgs/arraymap.png">
+      <h6><code>map</code>ping to a new array.</h6>
+      <p>
+        The advantage here is that the array can be saved to a variable and manipulated, instead of being <code>puts</code>ed. Again, <code>map</code> calls <code>each</code>. The same is true for other <code>Enumerable</code> methods like <code>cycle</code>, <code>select</code>, or <code>group_by</code>. The beauty of these methods is that they exist for all other container object classes, like <code>Range</code> and <code>Set</code>, although they don't all work exactly the same way. They can even be applied to classes of your own creation, as long as you define an <code>each</code> method! Check out some other <code>Enumerable</code> methods in the <a href="http://ruby-doc.org/core-2.2.0/Enumerable.html">Ruby Docs</a>.
+      </p>
+
     </section>
   </div>
 
@@ -71,3 +72,4 @@
   </footer>
 
 </body>
+
