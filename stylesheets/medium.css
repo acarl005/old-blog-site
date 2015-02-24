@@ -1,6 +1,6 @@
 body {
   margin: auto;
-  width: 100%;
+  width: 960px;
 }
 
 a {
@@ -11,24 +11,25 @@ a {
 nav {
   background: #063336;
   background: linear-gradient(to bottom, #031D1F, #0E8187);
-  width: 100%;
+  width: 960px;
 }
 
 nav a {
   position: relative;
   display: inline-block;
-  width: 32.5%;
-  height: 1.2em;
+  width: 156px;
+  height: 2em;
   font-family: raleway, sans-serif;
   color: white;
   text-align: center;
-  font-size: 1em;
+  font-size: 1.5em;
   text-decoration: none;
-  padding-top: 5px;
+  padding-top: 1em;
 }
 
 nav a:hover {
   color: #FF3900;
+  background: linear-gradient(to bottom, #0E8187, #031D1F);
 }
 
 nav a:active {
@@ -42,11 +43,11 @@ footer {
   background: linear-gradient(to bottom, #0E8187, #031D1F);
   position: fixed;
   bottom: 0px;
-  width: 100%;
+  width: 960px;
 }
 
 footer ul {
-  padding-left: 10px;
+  margin-right: 50px;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -55,16 +56,23 @@ footer li {
   list-style-type: none;
   display: inline-block;
   padding-top: 5px;
-  padding-right: 5px;
+  padding-right: 15px;
 }
 
 footer img {
   max-width: 40px;
   height:auto;
+  transition-duration: 2s;
+}
+
+footer img:hover {
+  -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
 }
 
 footer div {
-  width: 60px;
+  width: 200px;
   position: absolute;
   top: 0;
   right: 0;
@@ -75,11 +83,9 @@ footer div h4 {
   font-family: raleway, arial;
   font-size: 12px;
   text-decoration: none;
-  margin-top: 5px;
 }
 
 aside {
-  display: none;
   background-color: rgba(255, 255, 255, 0.7);
   border: 1px solid gray;
   width: 180px;
@@ -93,7 +99,7 @@ aside {
   margin: auto;
   margin-bottom: 100px;
   display: block;
-  width: 80%;
+  width: 720px;
   font-family: avenir;
   background-color: #E0E0EB;
   padding: 10px;
@@ -117,47 +123,47 @@ h2 {
   display: block;
   margin-top: 60px;
   margin-bottom: 100px;
-  width: 100%;
+  width: 960px;
 }
 
 .white-box {
   background-color: rgba(255, 255, 255, 0.7);
   border: 1px solid gray;
-  width: 90%;
+  width: 810px;
   font-family: avenir;
+  position: relative;
   margin: auto;
 }
 
 .white-box article {
   position: relative;
   left: 20px;
-  width: 90%;
+  width: 770px;
 }
 
 .white-box-2 {
   background-color: rgba(255, 255, 255, 0.7);
   border: 1px solid gray;
-  width: 95%;
+  width: 650px;
   font-family: avenir;
   margin-bottom: 20px;
-  margin-left: 2.5%;
+  margin-left: 6%;
 }
 
 .white-box-2 p, .white-box-2 h2, .white-box-2 b, .white-box-2 h3, .white-box-2 h4 {
  position: relative;
  left: 20px;
- margin-right: 20px
 }
 
 .white-box-3 {
   float: left;
   background-color: rgba(255, 255, 255, 0.7);
   border: 1px solid gray;
-  width: 240px;
+  width: 25%;
   font-family: avenir;
   margin-bottom: 20px;
   margin-right: 4%;
-  margin-left: 4%
+  margin-left: 4%;
   text-align: center;
 }
 
@@ -179,8 +185,8 @@ h2 {
 }
 
 #hex {
-  width: 100%;
-  height: 8em;
+  width: 960px;
+  height: 16em;
   background: url("../imgs/bg.jpg");
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -189,16 +195,16 @@ h2 {
 
 #hex h1 {
   color: white;
-  font-size: 1.5em;
+  font-size: 50px;
   margin: 0;
   position: relative;
-  top: 15px;
+  top: 35px;
   text-align: center;
   font-family: open sans, arial;
 }
 
 #hex h1 span {
-  font-size: 1em;
+  font-size: 40px;
   color: #C2C2D6;
 }
 
@@ -212,5 +218,9 @@ h2 {
 }
 
 #cont {
+  opacity: 0.6;
+}
+
+#cont:hover {
   opacity: 1;
 }
