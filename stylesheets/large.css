@@ -15,7 +15,6 @@ nav {
 }
 
 nav a {
-  position: relative;
   display: inline-block;
   width: 16.3%;
   height: 2em;
@@ -131,7 +130,6 @@ h2 {
   border: 1px solid gray;
   width: 810px;
   font-family: avenir;
-  position: relative;
   margin: auto;
 }
 
@@ -180,10 +178,6 @@ h2 {
   color: #0E8187;
 }
 
-#fwb {
-  position: relative;
-}
-
 #hex {
   width: 100%;
   height: 18em;
@@ -206,11 +200,6 @@ h2 {
 #hex h1 span {
   font-size: 40px;
   color: #C2C2D6;
-}
-
-#face {
-  margin-top: 20px;
-  display: inline-block;
 }
 
 #snow {
