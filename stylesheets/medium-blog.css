@@ -1,0 +1,39 @@
+body {
+  width: 960px;
+}
+
+nav {
+  width: 960px;
+}
+
+nav a {
+  width: 156px;
+}
+
+footer {
+  width: 960px;
+}
+
+.backed {
+  width: 960px;
+}
+
+.white-box-2 {
+  width: 650px;
+}
+
+.white-box-3 {
+  float: left;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid gray;
+  width: 240px;
+  font-family: avenir;
+  margin-bottom: 20px;
+  margin-right: 28px;
+  position: relative;
+  text-align: center;
+}
+
+.white-box-3 h4 {
+  font-weight: bold;
+}
