@@ -25,6 +25,7 @@
     <aside>
       <h2>Other Posts</h2>
       <h4>Programming</h4>
+      <h6><a href="t4-array-proc.html">#to_proc Method</a></h6>
       <h6>Enumerable Methods</h6>
       <h6><a href="t3-arrays-hashes.html">Ruby Data Structures</a></h6>
       <h6><a href="t2-css-design.html">Displaying Content in HTML/CSS</a></h6>
@@ -43,20 +44,19 @@
       <h2>Enumerable Methods</h2>
       <h3>The Power of Container Objects</h3>
       <h4><em>Feb 22, 2015</em></h4>
-      <img src="" />
 
       <p>
-        The <code>Enumerable</code> module is one of the hallmarks of Ruby. It's an assortment of methods for container objects, like arrays and hashes which I talked about in my previous blog post. These methods streamline the process of performing operations on each of the elements within a container object. The crux of <code>Enumerable</code> is that its inclusion to a class requires an <code>each</code> method for that class, because enumerable methods call <code>each</code>. For example the <code>each</code> method for <code>Array</code> looks something like this:
+        The <code>Enumerable</code> module is one of the hallmarks of Ruby. It's an assortment of methods for container objects, like arrays and hashes which I talked about in my previous blog post. These methods streamline the process of performing operations on each of the elements within a container object. The crux of <code>Enumerable</code> is that its inclusion to a class requires an <code>#each</code> method for that class, because enumerable methods call <code>#each</code>. For example the <code>Array#each</code> method looks something like this:
       </p>
       <img src="imgs/arrayself.png">
-      <h6>The <code>each</code> method in action.</h6>
+      <h6>The <code>Array#each</code> method in action.</h6>
       <p>
-        Each element in the array gets yielded to a code block. In the example above, <code>each</code> is called to <code>puts</code> each integer in the array incremented by one. One of the most useful <code>Enumerable</code> methods is <code>map</code>. This stores each output in a new array.
+        Each element in the array gets yielded to a code block. In the example above, <code>#each</code> is called to <code>puts</code> each integer in the array incremented by one. One of the most useful <code>Enumerable</code> methods is <code>#map</code>. This stores each output in a new array.
       </p>
       <img src="imgs/arraymap.png">
-      <h6><code>map</code>ping to a new array.</h6>
+      <h6><code>Array#map</code>ping to a new array.</h6>
       <p>
-        The advantage here is that the array can be saved to a variable and manipulated, instead of being <code>puts</code>ed. Again, <code>map</code> calls <code>each</code>. The same is true for other <code>Enumerable</code> methods like <code>cycle</code>, <code>select</code>, or <code>group_by</code>. The beauty of these methods is that they exist for all other container object classes, like <code>Range</code> and <code>Set</code>, although they don't all work exactly the same way. They can even be applied to classes of your own creation, as long as you define an <code>each</code> method! Check out some other <code>Enumerable</code> methods in the <a href="http://ruby-doc.org/core-2.2.0/Enumerable.html">Ruby Docs</a>.
+        The advantage here is that the array can be saved to a variable and manipulated, instead of being <code>puts</code>ed. Again, <code>#map</code> calls <code>#each</code>. The same is true for other <code>Enumerable</code> methods like <code>#cycle</code>, <code>#select</code>, or <code>#group_by</code>. The beauty of these methods is that they exist for all other container object classes, like <code>Range</code> and <code>Set</code>, although they don't all work exactly the same way. They can even be applied to classes of your own creation, as long as you define an <code>#each</code> method! Check out some other <code>Enumerable</code> methods in the <a href="http://ruby-doc.org/core-2.2.0/Enumerable.html">Ruby Docs</a>.
       </p>
 
     </section>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<head>
+  <title>Andrew's Blog</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/large-blog.css" />
+  <link rel="stylesheet" type="text/css" media="screen and (max-width: 960px)" href="../stylesheets/medium-blog.css" />
+  <link rel="stylesheet" type="text/css" media="screen and (max-width: 500px)" href="../stylesheets/phone-blog.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans|Raleway:200' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+  <div class="backed"></div>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../about-me.html">About Me</div></a>
+    <a href="../blog.html">Blog</div></a>
+    <a href="../education.html">Education</div></a>
+    <a href="../portfolio.html">Portfolio</div></a>
+    <a href="../contact.html">Contact</div></a>
+  </nav>
+
+  <div class="content-wrap">
+
+    <aside>
+      <h2>Other Posts</h2>
+      <h4>Programming</h4>
+      <h6>#to_proc Method</h6>
+      <h6><a href="t4-enumerable-methods.html">Enumerable Methods</a></h6>
+      <h6><a href="t3-arrays-hashes.html">Ruby Data Structures</a></h6>
+      <h6><a href="t2-css-design.html">Displaying Content in HTML/CSS</a></h6>
+      <h6><a href="t1-git-blog.html">Git and Github</a></h6>
+      <h4>Science</h4>
+      <h6><a href="s2-prop-65.html">California Prop. 65</a></h6>
+      <h6><a href="s1-teixobactin.html">Teixobactin</a></h6>
+      <h4>DBC Culture</h4>
+      <h6><a href="c4-tech-issues.html">Lack of Diversity</a></h6>
+      <h6><a href="c3-thinking-style.html">Growth vs. Fixed Mindset</a></h6>
+      <h6><a href="c1-chefs-kitchen.html">Kitchen vs. Table Mindset</a></h6>
+    </aside>
+
+    <section class="white-box-2" id="t4">
+
+      <h2>The #to_proc Ruby Method</h2>
+      <h3>Refactoring Blocks</h3>
+      <h4><em>Feb 25, 2015</em></h4>
+
+      <img src="imgs/proc1.png" />
+      <p>
+        In my post about <code>Enumerable</code> methods, I discussed methods like <code>Array#map</code>, which yields each element of an array to a block and stores the output in a new array. It transpires that in some cases, it isn't necessary to type out a whole block for this method, among others. Shown above is one such example which utilizes the <code>&</code> operator on a symbol <code>:upcase</code>. <strong>What's going on here?</strong> The <code>&</code> operator has several meanings, but in this context it attempts to convert the symbol to a <em>proc</em>. Procs are like blocks, but can be stored in a variable and referenced. The conversion is attempted by calling the <code>Symbol#to_proc</code> method. So <code>&:upcase</code> <em>really</em> means <code>:upcase.to_proc</code>.
+      </p>
+      <img src="imgs/proc2.png">
+      <h6>The definition of the method and an example of calling it.</h6>
+      <p>
+        Shown above is the definition of the <code>Symbol#to_proc</code> method. Now we can see what's under the hood when we use this shortcut! Another example is the <code>#inject</code> method.
+      </p>
+      <img src="imgs/proc3.png">
+      <h6>Its use on the inject method.</h6>
+      <p>
+        This example yields two arguments to the block. The first receives the message with the method, in this case <code>:+</code>, and the second is passed as the argument for <code>#+</code>. This shortcut is galvanizing and I use it whenever possible! But are Rubyists missing out on something potentially more powerful? What if, for example, you wanted to use a method like <code>#include?</code> or <code>is_a?</code> which require an argument?
+      </p>
+      <img src="imgs/proc4.png">
+      <h6>I love this shortcut! But why can't I put an argument in?</h6>
+      <p>
+        Sadly this is not possible at the time of writing. <strong>But can we make it possible?</strong> We would like to pass an object in to be used as an argument, so <code>Symbol#to_proc</code> can't help us. But what about <code>Array#to_proc</code>? Certainly we can place objects in conjunction with our symbol in an array! But <code>Array#to_proc</code> doesn't exist... yet. Let's write it!
+      </p>
+      <img src="imgs/proc5.png">
+      <h6>Defining a conversion for arrays to procs.</h6>
+      <p>
+        Voila! We've defined <code>Array#to_proc</code> wherein the method is placed at index 0 and the rest of the array is a variable number of arguments! Now we can do things like this:
+      </p>
+      <img src="imgs/proc6.png">
+      <h6>Some examples of <code>Array#to_proc</code> in action.</h6>
+      <p>
+        We've refactored even further. Have I saved myself any time? <strong>Probably not.</strong> But it is a nice exercise in programming and getting intimate with Ruby.
+      </p>
+
+    </section>
+  </div>
+
+  <footer>
+    <div><h4>&#169 2015 Andrew Carlson</h4></div>
+    <ul>
+      <li><a href="http://www.google.com/+AndrewCarlson005"><img src="../imgs/google-w.png"></a></li>
+      <li><a href="http://www.facebook.com/andy.carlson3"><img src="../imgs/facebook-w.png"></a></li>
+      <li><a href="https://www.linkedin.com/profile/view?id=242315253"><img src="../imgs/linkedin-w.png"></a></li>
+      <li><a href="https://twitter.com/acarl005"><img src="../imgs/twitter2-w.png"></a></li>
+      <li><a href="https://github.com/acarl005"><img src="../imgs/github-w.png"></a></li>
+    </ul>
+  </footer>
+
+</body>
+

@@ -12,6 +12,10 @@ a:hover {
   color: #0E8187;
 }
 
+code {
+  background-color: #E2F1FF;
+}
+
 nav {
   background: #063336;
   background: linear-gradient(to bottom, #031D1F, #0E8187);
