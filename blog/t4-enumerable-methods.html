@@ -51,12 +51,12 @@
       <img src="imgs/arrayself.png">
       <h6>The <code>Array#each</code> method in action.</h6>
       <p>
-        Each element in the array gets yielded to a code block. In the example above, <code>#each</code> is called to <code>puts</code> each integer in the array incremented by one. One of the most useful <code>Enumerable</code> methods is <code>#map</code>. This stores each output in a new array.
+        Each element in the array gets yielded to a code block in order from 0 to the end. In the example above, <code>#each</code> is called to <code>puts</code> each integer in the array incremented by one. One of the most useful <code>Enumerable</code> methods is <code>#map</code>. This stores each output in a new array.
       </p>
       <img src="imgs/arraymap.png">
       <h6><code>Array#map</code>ping to a new array.</h6>
       <p>
-        The advantage here is that the array can be saved to a variable and manipulated, instead of being <code>puts</code>ed. Again, <code>#map</code> calls <code>#each</code>. The same is true for other <code>Enumerable</code> methods like <code>#cycle</code>, <code>#select</code>, or <code>#group_by</code>. The beauty of these methods is that they exist for all other container object classes, like <code>Range</code> and <code>Set</code>, although they don't all work exactly the same way. They can even be applied to classes of your own creation, as long as you define an <code>#each</code> method! Check out some other <code>Enumerable</code> methods in the <a href="http://ruby-doc.org/core-2.2.0/Enumerable.html">Ruby Docs</a>.
+        The advantage here is that the array can be saved to a variable and manipulated, instead of just being <code>puts</code>ed. Again, <code>#map</code> calls <code>#each</code>. The same is true for other <code>Enumerable</code> methods like <code>#cycle</code>, <code>#select</code>, or <code>#group_by</code>. The beauty of these methods is that they exist for all other container object classes, like <code>Range</code> and <code>Set</code>, although they don't all work exactly the same way. They can even be applied to classes of your own creation, as long as you define an <code>#each</code> method! Check out some other <code>Enumerable</code> methods in the <a href="http://ruby-doc.org/core-2.2.0/Enumerable.html">Ruby Docs</a>.
       </p>
 
     </section>

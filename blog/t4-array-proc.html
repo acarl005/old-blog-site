@@ -47,7 +47,12 @@
 
       <img src="imgs/proc1.png" />
       <p>
-        In my post about <code>Enumerable</code> methods, I discussed methods like <code>Array#map</code>, which yields each element of an array to a block and stores the output in a new array. It transpires that in some cases, it isn't necessary to type out a whole block for this method, among others. Shown above is one such example which utilizes the <code>&</code> operator on a symbol <code>:upcase</code>. <strong>What's going on here?</strong> The <code>&</code> operator has several meanings, but in this context it attempts to convert the symbol to a <em>proc</em>. Procs are like blocks, but can be stored in a variable and referenced. The conversion is attempted by calling the <code>Symbol#to_proc</code> method. So <code>&:upcase</code> <em>really</em> means <code>:upcase.to_proc</code>.
+        In my post about <code>Enumerable</code> methods, I discussed methods like <code>Array#map</code>, which yields each element of an array to a block and stores the output in a new array. It transpires that in some cases, it isn't necessary to type out a whole block for this method, among others. Shown above is one such example which utilizes the <code>&</code> operator on a symbol <code>:upcase</code>. <strong>What's going on here?</strong> The <code>&</code> operator is generally used to call a <em>proc</em>. Procs are essentially blocks, but differ in that they are objects. Despite almost everything in Ruby being an object, blocks are not, and they cannot be saved into a variable, only executed. But a proc <em>is</em> an object. One can be initialized with <code>Proc.new</code>, and the <code>&</code> is used to call a proc stored in a variable.
+      </p>
+      <img src="imgs/proc1a.png">
+      <h6>Creating a proc and calling it multiple times</h6>
+      <p>
+        This can eliminate a lot of redundancy! But what does this have to do with symbols? When <code>&</code> is given an object that isn't a proc, like a symbol, it attempts to convert it to one. The conversion is attempted by calling the <code>Symbol#to_proc</code> method. So <code>&:upcase</code> <em>really</em> means <code>:upcase.to_proc</code>.
       </p>
       <img src="imgs/proc2.png">
       <h6>The definition of the method and an example of calling it.</h6>
@@ -62,7 +67,7 @@
       <img src="imgs/proc4.png">
       <h6>I love this shortcut! But why can't I put an argument in?</h6>
       <p>
-        Sadly this is not possible at the time of writing. <strong>But can we make it possible?</strong> We would like to pass an object in to be used as an argument, so <code>Symbol#to_proc</code> can't help us. But what about <code>Array#to_proc</code>? Certainly we can place objects in conjunction with our symbol in an array! But <code>Array#to_proc</code> doesn't exist... yet. Let's write it!
+        Sadly this is not possible at the time of writing. <strong>But can we make it possible?</strong> We would like to pass an object in to be used as an argument, so <code>Symbol#to_proc</code> can't help us. But what about <code>Array#to_proc</code>? Certainly we can place objects in conjunction with our symbol in an array! But <code>Array#to_proc</code> doesn't exist... yet. Let's do a little bit of monkey-patching!
       </p>
       <img src="imgs/proc5.png">
       <h6>Defining a conversion for arrays to procs.</h6>
