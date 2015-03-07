@@ -74,3 +74,48 @@ group_1.reject(&[:<, 4])
 
 
 
+
+
+["laptop", "headphones", "pillow", "microwave"].each { |x|
+  puts "I can't live without my #{x}!"
+}
+# I can't live without my laptop!
+# I can't live without my headphones!
+# I can't live without my pillow!
+# I can't live without my microwave!
+
+
+foo = Enumerator.new { |y|
+  y.yield(1)
+  y.yield(2)
+  y.yield(3)
+}
+
+foo.map { |x| x }
+# => [1, 2, 3]
+
+
+bar = [1, 2, 3].each
+# => { |y|
+#   y.yield(1)
+#   y.yield(2)
+#   y.yield(3)
+# }
+
+
+arr = [4, 4, 0, 8, 0, 4, 1, 2, 3, 4, 5, 6, 7, 9, 0, 1]
+# do something to arr
+# => [8, 4, 0, 8, 0, 4, 2, 2, 6, 4, 10, 6, 14, 9, 0, 1]
+
+for i in (0...arr.length)
+  if i % 2 == 0
+    arr[i] *= 2
+  end
+end
+arr => [8, 4, 0, 8, 0, 4, 2, 2, 6, 4, 10, 6, 14, 9, 0, 1]
+
+
+arr.each_with_index.map{ |x,i| x.*((i+1)%2+1) }
+# => [8, 4, 0, 8, 0, 4, 2, 2, 6, 4, 10, 6, 14, 9, 0, 1]
+
+
