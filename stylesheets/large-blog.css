@@ -150,11 +150,16 @@ h2 {
   color: gray;
 }
 
-img {
+img, iframe {
   max-width: 100%;
   height: auto;
   margin: auto;
   display: block;
+}
+
+iframe {
+  width: 420px;
+  height: 315px;
 }
 
 h6 {
