@@ -5,7 +5,15 @@ body {
 
 a {
   text-decoration: none;
-  color: black;
+  color: #0099ff;
+}
+
+a:hover {
+  color: #0E8187;
+}
+
+code {
+  background-color: #E2F1FF;
 }
 
 nav {
@@ -103,6 +111,14 @@ aside {
   padding: 10px;
 }
 
+aside h2, aside h4 {
+  margin-left: 20px;
+}
+
+aside h6, aside h4 {
+  margin-bottom: 0;
+}
+
 h2 {
   color: #0E8187;
 }
@@ -150,6 +166,7 @@ h2 {
 .white-box-2 p, .white-box-2 h2, .white-box-2 b, .white-box-2 h3, .white-box-2 h4 {
  position: relative;
  left: 20px;
+ margin-right: 40px;
 }
 
 .white-box-3 {
@@ -164,6 +181,10 @@ h2 {
   text-align: center;
 }
 
+.white-box-2 h3 {
+  color: gray;
+}
+
 .white-box-3 h4 {
   font-weight: bold;
 }
@@ -175,6 +196,23 @@ h2 {
 
 .white-box-3 a:hover {
   color: #0E8187;
+}
+
+img, iframe {
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  display: block;
+}
+
+iframe {
+  width: 420px;
+  height: 315px;
+}
+
+h6 {
+  text-align: center;
+  margin-top: 5px;
 }
 
 #hex {
@@ -211,4 +249,127 @@ h2 {
 
 #cont:hover {
   opacity: 1;
+}
+
+@media (max-width: 960px) {
+
+  body {
+    width: 960px;
+  }
+
+  nav {
+    width: 960px;
+  }
+
+  nav a {
+    width: 156px;
+  }
+
+  footer {
+    width: 960px;
+  }
+
+  aside {
+    width: 180px;
+  }
+
+  .backed {
+    width: 960px;
+  }
+
+  .content-wrap {
+    width: 960px;
+  }
+
+  .white-box-2 {
+    width: 650px;
+  }
+
+  #hex {
+    width: 960px;
+    height: 16em;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  body {
+    width: 100%;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav a {
+    width: 32.5%;
+    height: 1.2em;
+    font-size: 1em;
+    padding-top: 5px;
+  }
+
+  footer {
+    width: 100%;
+  }
+
+  footer ul {
+    padding-left: 10px;
+  }
+
+  footer li {
+    padding-right: 5px;
+  }
+
+  footer div {
+    width: 60px;
+  }
+
+  footer div h4 {
+    margin-top: 5px;
+  }
+
+  aside {
+    display: none;
+  }
+
+  .content-wrap {
+    width: 100%;
+  }
+
+  .white-box {
+    width: 90%;
+  }
+
+  .white-box article {
+    width: 90%;
+  }
+
+  .white-box-2 {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .white-box-2 p, .white-box-2 h2, .white-box-2 b, .white-box-2 h3, .white-box-2 h4 {
+   margin-right: 20px
+  }
+
+  .white-box-3 {
+    width: 240px;
+  }
+
+  #hex {
+    width: 100%;
+    height: 8em;
+  }
+
+  #hex h1 {
+    font-size: 1.5em;
+    top: 15px;
+  }
+
+  #hex h1 span {
+    font-size: 1em;
+  }
+
 }
