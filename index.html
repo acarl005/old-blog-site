@@ -1,35 +1,45 @@
 <!DOCTYPE html>
-<html ng-app="store">
+<html ng-app="andySite">
 <head>
   <title>Andrew's Website</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans|Raleway:200' rel='stylesheet' type='text/css'>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script type="text/javascript" src="main.js"></script>
 </head>
 
 <body>
 
+  <div class="backed"></div>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about-me.html">About Me</div></a>
-    <a href="blog.html">Blog</div></a>
-    <a href="education.html">Education</div></a>
-    <a href="portfolio.html">Portfolio</div></a>
-    <a href="contact.html">Contact</div></a>
+    <a ui-sref="home">Home</a>
+    <a ui-sref="about-me">About Me</div></a>
+    <a ui-sref="blog">Blog</div></a>
+    <a ui-sref="education">Education</div></a>
+    <a ui-sref="portfolio">Portfolio</div></a>
+    <a ui-sref="contact">Contact</div></a>
   </nav>
 
-  <section id="hex">
-    <h1>Andrew Carlson. <span>Web Developer.</span></h1>
-  </section>
+  <div ui-view></div>
 
-  <section class="hello">
-    <h2>Welcome to Andrew's Website!</h2>
-    <hr>
-    <p>Welcome web traveller! You've found the website I've been building as a project for Dev Bootcamp. So far it's made of just HTML/CSS. It'll grow as I do throughout the program. If you'd like to know more about me, have a look around!</p>
-  </section>
+  <aside ng-hide="blog === 0">
+    <h2>Other Posts</h2>
+    <h4>DBC Culture</h4>
+    <h6><a href="c6-stereotype-threat.html">Stereotype Threat</a></h6>
+    <h6><a href="c5-feedback.html">Pairing and Feedback</a></h6>
+    <h6><a href="c4-tech-issues.html">Lack of Diversity</a></h6>
+    <h6><a href="c3-thinking-style.html">Growth vs. Fixed Mindset</a></h6>
+    <h6>Kitchen vs. Table Mindset</h6>
+    <h4>Science</h4>
+    <h6><a href="s2-prop-65.html">California Prop. 65</a></h6>
+    <h6><a href="s1-teixobactin.html">Teixobactin</a></h6>
+    <h4>Programming</h4>
+    <h6><a href="t6-array-proc.html">#to_proc Method</a></h6>
+    <h6><a href="t5-ruby-classes.html">Enumerators</a></h6>
+    <h6><a href="t4-enumerable-methods.html">Enumerable Methods</a></h6>
+    <h6><a href="t3-arrays-hashes.html">Ruby Data Structures</a></h6>
+    <h6><a href="t2-css-design.html">Displaying Content in HTML/CSS</a></h6>
+    <h6><a href="t1-git-blog.html">Git and Github</a></h6>
+  </aside>
 
   <footer>
     <div><h4>&#169 2015 Andrew Carlson</h4></div>
@@ -42,5 +52,8 @@
     </ul>
   </footer>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

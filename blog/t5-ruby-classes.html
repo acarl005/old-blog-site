@@ -1,95 +1,35 @@
-<!DOCTYPE html>
-<head>
-  <title>Andrew's Blog</title>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="../stylesheets/large-blog.css" />
-  <link rel="stylesheet" type="text/css" media="screen and (max-width: 960px)" href="../stylesheets/medium-blog.css" />
-  <link rel="stylesheet" type="text/css" media="screen and (max-width: 500px)" href="../stylesheets/phone-blog.css">
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans|Raleway:200' rel='stylesheet' type='text/css'>
-
-</head>
-
-<body>
-  <div class="backed"></div>
-  <nav>
-    <a href="../index.html">Home</a>
-    <a href="../about-me.html">About Me</div></a>
-    <a href="../blog.html">Blog</div></a>
-    <a href="../education.html">Education</div></a>
-    <a href="../portfolio.html">Portfolio</div></a>
-    <a href="../contact.html">Contact</div></a>
-  </nav>
-
-  <div class="content-wrap">
-
-    <aside>
-      <h2>Other Posts</h2>
-      <h4>Programming</h4>
-      <h6><a href="t6-array-proc.html">#to_proc Method</a></h6>
-      <h6>Enumerators</h6>
-      <h6><a href="t4-enumerable-methods.html">Enumerable Methods</a></h6>
-      <h6><a href="t3-arrays-hashes.html">Ruby Data Structures</a></h6>
-      <h6><a href="t2-css-design.html">Displaying Content in HTML/CSS</a></h6>
-      <h6><a href="t1-git-blog.html">Git and Github</a></h6>
-      <h4>Science</h4>
-      <h6><a href="s2-prop-65.html">California Prop. 65</a></h6>
-      <h6><a href="s1-teixobactin.html">Teixobactin</a></h6>
-      <h4>DBC Culture</h4>
-      <h6><a href="c6-stereotype-threat.html">Stereotype Threat</a></h6>
-      <h6><a href="c5-feedback.html">Pairing and Feedback</a></h6>
-      <h6><a href="c4-tech-issues.html">Lack of Diversity</a></h6>
-      <h6><a href="c3-thinking-style.html">Growth vs. Fixed Mindset</a></h6>
-      <h6><a href="c1-chefs-kitchen.html">Kitchen vs. Table Mindset</a></h6>
-    </aside>
-
-    <section class="white-box-2" id="t5">
-
-      <h2>Enumerators</h2>
-      <h3>The Brains of Iteration</h3>
-      <h4><em>Mar 5, 2015</em></h4>
-
-      <p>
-        In my <a href="t4-enumerable-methods.html">last post</a>, I covered <code>Enumerable</code> methods, the workhorses of iterating in Ruby. The entire repertoire of these iterators is made available to any class by inclusion of the <code>Enumerable</code> module and defining an <code>#each</code> method. An <code>#each</code> is compulsory because iterators rely on it to teach them how to enumerate by calling the method. In this post, I want to discuss related objects: <strong>enumerators</strong>.
-      </p>
-      <img src="imgs/enum1.png">
-      <h6>A reminder about the <code>#each</code> method.</h6>
-      <p>
-        Enumerators are instances of the class <code>Enumerator</code>, which includes <code>Enumerable</code>. Think of them as a set of instructions on how to enumerate. However, they differ in that they are <em>not</em> methods. They aren't container objects either, so their is no implicit basis for an <code>#each</code> operation. Rather, the logic for enumeration must be specified in the instantiation of the enumerator. This can be done either by calling <code>Enumerator.new</code> with a code block containing the "each" logic you want it to follow, or by creating it from a container object, e.g. array or range. Shown below is an example of the former.
-      </p>
-      <img src="imgs/enum2.png">
-      <h6>Creating a new instance of <code>Enumerator</code>.</h6>
-      <p>
-        When <code>#each</code> is called on <code>foo</code>, it will yield 1, then 2, then 3. The parameter <code>y</code> is a <em>yielder</em>, an instance of <code>Enumerator::Yielder</code>, automatically passed to the block. Alternatively, one can be created from an enumerable object. This is done by calling the each method <em>without giving it a block</em>.
-      </p>
-      <img src="imgs/enum3.png">
-      <h6>Creating an enumerator with <code>Array#each</code>. Enumerators aren't actually displayed this way when printed.</h6>
-      <p>
-        We're pretty used to giving <code>#each</code> and other <code>Enumerable</code> methods code blocks. But what does calling <code>#each</code> actually <em>return</em> if not given a block? We can see here that it returns an enumerator! It's essentially left as the raw instructions on how to be iterated upon. We can take this enumerator <code>bar</code> and treat it as any other enumerable object as this point. We could call <code>#map</code>, <code>#find</code>, <code>#group_by</code>, etc. This example is a bit trivial. Surely we can use an array or range to enumerate 1, 2, then 3. <strong>So when is this actually useful?</strong> Consider this: What if you wanted to take an array of numbers and multiply every other number by 2, as per the <a href="http://en.wikipedia.org/wiki/Luhn_algorithm">Luhn Algorithm</a>? What's the most efficient way? I'd like the output to be returned in an array so I can perform more manipulations. Ideally I'd like to <code>#map</code>, but there's an issue.
-      </p>
-      <img src="imgs/enum4.png">
-      <h6>Doubling every other element of the array using a <code>for</code> loop.</h6>
-      <p>
-        I'll need some way of distinguishing <em>every other</em> element. If I want to use <code>#map</code>, I would need to create another variable to act as a counter upon which I could use <code>% 2</code> to establish the control flow. Either that or I'd have to make an old fashioned <code>for</code> loop. That would let me use the array index as the counter. But isn't there a cleaner way? I know there's an <code>Array#each_with_index</code> method. This method yields two parameters to a block, the array element <em>and</em> its index. Unfortunately there is no <code>Array#map_with_index</code> method. But an enumerator can help us! What if I call the <code>#each_with_index</code> method without a code block? This would produce an enumerator that knows how to enumerate the array elements and the respective index! Then I could call <code>#map</code> on it.
-      </p>
-      <img src="imgs/enum5.png">
-      <h6>Using an enumerator to get the effect of a hypothetical <code>#map_with_index</code>.</h6>
-      <p>
-        Cheers! We've achieved the desired result more quickly using an enumerator! Using this approach you can also chain any other <code>Enumerable</code> method to gain an index as a parameter. For my DBC Gophers out there, I used this approach for challenge 5.6 in phase 0. Check out <a href="https://github.com/acarl005/phase-0-unit-2/blob/master/week-5/6-validate-credit-card/my_solution.rb">my solution on Github</a>!
-      </p>
-
-    </section>
-  </div>
-
-  <footer>
-    <div><h4>&#169 2015 Andrew Carlson</h4></div>
-    <ul>
-      <li><a href="http://www.google.com/+AndrewCarlson005"><img src="../imgs/google-w.png"></a></li>
-      <li><a href="http://www.facebook.com/andy.carlson3"><img src="../imgs/facebook-w.png"></a></li>
-      <li><a href="https://www.linkedin.com/profile/view?id=242315253"><img src="../imgs/linkedin-w.png"></a></li>
-      <li><a href="https://twitter.com/acarl005"><img src="../imgs/twitter2-w.png"></a></li>
-      <li><a href="https://github.com/acarl005"><img src="../imgs/github-w.png"></a></li>
-    </ul>
-  </footer>
-
-</body>
-
+<div class="content-wrap">
+  <section class="white-box-2" id="t5">
+    <h2>Enumerators</h2>
+    <h3>The Brains of Iteration</h3>
+    <h4><em>Mar 5, 2015</em></h4>
+    <p>
+      In my <a href="t4-enumerable-methods.html">last post</a>, I covered <code>Enumerable</code> methods, the workhorses of iterating in Ruby. The entire repertoire of these iterators is made available to any class by inclusion of the <code>Enumerable</code> module and defining an <code>#each</code> method. An <code>#each</code> is compulsory because iterators rely on it to teach them how to enumerate by calling the method. In this post, I want to discuss related objects: <strong>enumerators</strong>.
+    </p>
+    <img src="blog/imgs/enum1.png">
+    <h6>A reminder about the <code>#each</code> method.</h6>
+    <p>
+      Enumerators are instances of the class <code>Enumerator</code>, which includes <code>Enumerable</code>. Think of them as a set of instructions on how to enumerate. However, they differ in that they are <em>not</em> methods. They aren't container objects either, so their is no implicit basis for an <code>#each</code> operation. Rather, the logic for enumeration must be specified in the instantiation of the enumerator. This can be done either by calling <code>Enumerator.new</code> with a code block containing the "each" logic you want it to follow, or by creating it from a container object, e.g. array or range. Shown below is an example of the former.
+    </p>
+    <img src="blog/imgs/enum2.png">
+    <h6>Creating a new instance of <code>Enumerator</code>.</h6>
+    <p>
+      When <code>#each</code> is called on <code>foo</code>, it will yield 1, then 2, then 3. The parameter <code>y</code> is a <em>yielder</em>, an instance of <code>Enumerator::Yielder</code>, automatically passed to the block. Alternatively, one can be created from an enumerable object. This is done by calling the each method <em>without giving it a block</em>.
+    </p>
+    <img src="blog/imgs/enum3.png">
+    <h6>Creating an enumerator with <code>Array#each</code>. Enumerators aren't actually displayed this way when printed.</h6>
+    <p>
+      We're pretty used to giving <code>#each</code> and other <code>Enumerable</code> methods code blocks. But what does calling <code>#each</code> actually <em>return</em> if not given a block? We can see here that it returns an enumerator! It's essentially left as the raw instructions on how to be iterated upon. We can take this enumerator <code>bar</code> and treat it as any other enumerable object as this point. We could call <code>#map</code>, <code>#find</code>, <code>#group_by</code>, etc. This example is a bit trivial. Surely we can use an array or range to enumerate 1, 2, then 3. <strong>So when is this actually useful?</strong> Consider this: What if you wanted to take an array of numbers and multiply every other number by 2, as per the <a href="http://en.wikipedia.org/wiki/Luhn_algorithm">Luhn Algorithm</a>? What's the most efficient way? I'd like the output to be returned in an array so I can perform more manipulations. Ideally I'd like to <code>#map</code>, but there's an issue.
+    </p>
+    <img src="blog/imgs/enum4.png">
+    <h6>Doubling every other element of the array using a <code>for</code> loop.</h6>
+    <p>
+      I'll need some way of distinguishing <em>every other</em> element. If I want to use <code>#map</code>, I would need to create another variable to act as a counter upon which I could use <code>% 2</code> to establish the control flow. Either that or I'd have to make an old fashioned <code>for</code> loop. That would let me use the array index as the counter. But isn't there a cleaner way? I know there's an <code>Array#each_with_index</code> method. This method yields two parameters to a block, the array element <em>and</em> its index. Unfortunately there is no <code>Array#map_with_index</code> method. But an enumerator can help us! What if I call the <code>#each_with_index</code> method without a code block? This would produce an enumerator that knows how to enumerate the array elements and the respective index! Then I could call <code>#map</code> on it.
+    </p>
+    <img src="blog/imgs/enum5.png">
+    <h6>Using an enumerator to get the effect of a hypothetical <code>#map_with_index</code>.</h6>
+    <p>
+      Cheers! We've achieved the desired result more quickly using an enumerator! Using this approach you can also chain any other <code>Enumerable</code> method to gain an index as a parameter. For my DBC Gophers out there, I used this approach for challenge 5.6 in phase 0. Check out <a href="https://github.com/acarl005/phase-0-unit-2/blob/master/week-5/6-validate-credit-card/my_solution.rb">my solution on Github</a>!
+    </p>
+  </section>
+</div>

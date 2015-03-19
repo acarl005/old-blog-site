@@ -1,79 +1,19 @@
-<!DOCTYPE html>
-<head>
-  <title>Andrew's Blog</title>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="../stylesheets/large-blog.css" />
-  <link rel="stylesheet" type="text/css" media="screen and (max-width: 960px)" href="../stylesheets/medium-blog.css" />
-  <link rel="stylesheet" type="text/css" media="screen and (max-width: 500px)" href="../stylesheets/phone-blog.css">
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans|Raleway:200' rel='stylesheet' type='text/css'>
-
-</head>
-
-<body>
-  <div class="backed"></div>
-  <nav>
-    <a href="../index.html">Home</a>
-    <a href="../about-me.html">About Me</div></a>
-    <a href="../blog.html">Blog</div></a>
-    <a href="../education.html">Education</div></a>
-    <a href="../portfolio.html">Portfolio</div></a>
-    <a href="../contact.html">Contact</div></a>
-  </nav>
-
-  <div class="content-wrap">
-
-    <aside>
-      <h2>Other Posts</h2>
-      <h4>Programming</h4>
-      <h6><a href="t6-array-proc.html">#to_proc Method</a></h6>
-      <h6><a href="t5-ruby-classes.html">Enumerators</a></h6>
-      <h6><a href="t4-enumerable-methods.html">Enumerable Methods</a></h6>
-      <h6>Ruby Data Structures</h6>
-      <h6><a href="t2-css-design.html">Displaying Content in HTML/CSS</a></h6>
-      <h6><a href="t1-git-blog.html">Git and Github</a></h6>
-      <h4>Science</h4>
-      <h6><a href="s2-prop-65.html">California Prop. 65</a></h6>
-      <h6><a href="s1-teixobactin.html">Teixobactin</a></h6>
-      <h4>DBC Culture</h4>
-      <h6><a href="c6-stereotype-threat.html">Stereotype Threat</a></h6>
-      <h6><a href="c5-feedback.html">Pairing and Feedback</a></h6>
-      <h6><a href="c4-tech-issues.html">Lack of Diversity</a></h6>
-      <h6><a href="c3-thinking-style.html">Growth vs. Fixed Mindset</a></h6>
-      <h6><a href="c1-chefs-kitchen.html">Kitchen vs. Table Mindset</a></h6>
-    </aside>
-
-    <section class="white-box-2" id="t3">
-
-      <h2>Ruby Data Structures</h2>
-      <h3>Arrays vs. Hashes</h3>
-      <h4><em>Feb 16, 2015</em></h4>
-      <img style="max-width: 30%; height:auto"src="http://technorians.com/wp-content/uploads/2013/04/Folder-icon.png" />
-
-      <p>
-        Ruby has objects similar to other object-oriented programming languages: numbers, strings, and booleans. Two of the <em>container</em> objects I want to talk about in this post are arrays and hashes! Imagine an array as a stack of papers. On each paper is an object. It can be an integer, string, or even an array! Each page in the stack can be easily referenced by its page number, denoted by an integer. Think of an array as an ordered list.
-      </p>
-      <img src="imgs/arrayhash.png">
-      <h6>An example of an array and a hash.</h6>
-      <p>
-        Hashes are a bit more conceptually complex, but very analogous. Now imagine a stack of folders, each with only one page within it. These folders have a tab at the top on which any object can be written. It's similar to an array, but instead of these contents being referenced by an integer, or page number, it can be referenced by any object, or "key". Prior to Ruby 1.9, hases were not ordered, like arrays. However, now hashes are ordered by default in the same sequence which they are entered.
-      </p>
-      <p>
-        Arrays are convenient because they can be sorted. However, inserting into sorted arrays is expensive, requiring <em>O(n)</em> time. Inserting into hashes is much more efficient! So if your task requires far more insertions than look-ups, maybe a hash is more suitable for the job!
-      </p>
-
-    </section>
-  </div>
-
-  <footer>
-    <div><h4>&#169 2015 Andrew Carlson</h4></div>
-    <ul>
-      <li><a href="http://www.google.com/+AndrewCarlson005"><img src="../imgs/google-w.png"></a></li>
-      <li><a href="http://www.facebook.com/andy.carlson3"><img src="../imgs/facebook-w.png"></a></li>
-      <li><a href="https://www.linkedin.com/profile/view?id=242315253"><img src="../imgs/linkedin-w.png"></a></li>
-      <li><a href="https://twitter.com/acarl005"><img src="../imgs/twitter2-w.png"></a></li>
-      <li><a href="https://github.com/acarl005"><img src="../imgs/github-w.png"></a></li>
-    </ul>
-  </footer>
-
-</body>
-
+<div class="content-wrap">
+  <section class="white-box-2" id="t3">
+    <h2>Ruby Data Structures</h2>
+    <h3>Arrays vs. Hashes</h3>
+    <h4><em>Feb 16, 2015</em></h4>
+    <img style="max-width: 30%; height:auto"src="http://technorians.com/wp-content/uploads/2013/04/Folder-icon.png" />
+    <p>
+      Ruby has objects similar to other object-oriented programming languages: numbers, strings, and booleans. Two of the <em>container</em> objects I want to talk about in this post are arrays and hashes! Imagine an array as a stack of papers. On each paper is an object. It can be an integer, string, or even an array! Each page in the stack can be easily referenced by its page number, denoted by an integer. Think of an array as an ordered list.
+    </p>
+    <img src="blog/imgs/arrayhash.png">
+    <h6>An example of an array and a hash.</h6>
+    <p>
+      Hashes are a bit more conceptually complex, but very analogous. Now imagine a stack of folders, each with only one page within it. These folders have a tab at the top on which any object can be written. It's similar to an array, but instead of these contents being referenced by an integer, or page number, it can be referenced by any object, or "key". Prior to Ruby 1.9, hases were not ordered, like arrays. However, now hashes are ordered by default in the same sequence which they are entered.
+    </p>
+    <p>
+      Arrays are convenient because they can be sorted. However, inserting into sorted arrays is expensive, requiring <em>O(n)</em> time. Inserting into hashes is much more efficient! So if your task requires far more insertions than look-ups, maybe a hash is more suitable for the job!
+    </p>
+  </section>
+</div>

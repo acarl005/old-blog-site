@@ -36,12 +36,18 @@ nav a {
 
 nav a:hover {
   color: #FF3900;
-  background: linear-gradient(to bottom, #0E8187, #031D1F);
 }
 
 nav a:active {
   background: #031D1F;
   background: linear-gradient(to bottom, #0E8187, #031D1F);
+}
+
+.active {
+  background: #031D1F;
+  background: linear-gradient(to bottom, #0E8187, #031D1F);
+  border-left: solid 1px white;
+  border-right: solid 1px white;
 }
 
 footer {
@@ -101,7 +107,7 @@ aside {
   margin-right: 40px;
 }
 
-.hello {
+#hello {
   margin: auto;
   margin-bottom: 100px;
   display: block;
@@ -109,6 +115,12 @@ aside {
   font-family: avenir;
   background-color: #E0E0EB;
   padding: 10px;
+}
+
+#cover {
+  width: 100%;
+  height: 100%;
+  background-color: white;
 }
 
 aside h2, aside h4 {
@@ -146,6 +158,7 @@ h2 {
   width: 810px;
   font-family: avenir;
   margin: auto;
+  padding-bottom: 20px;
 }
 
 .white-box article {
@@ -179,6 +192,7 @@ h2 {
   margin-right: 4%;
   margin-left: 4%;
   text-align: center;
+  padding-bottom: 10px;
 }
 
 .white-box-2 h3 {
