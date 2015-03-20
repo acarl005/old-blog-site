@@ -1,10 +1,11 @@
 <div class="content-wrap">
+  <aside ng-include="'aside.html'"></aside>
   <section class="white-box-2" id="t5">
     <h2>Enumerators</h2>
     <h3>The Brains of Iteration</h3>
     <h4><em>Mar 5, 2015</em></h4>
     <p>
-      In my <a href="t4-enumerable-methods.html">last post</a>, I covered <code>Enumerable</code> methods, the workhorses of iterating in Ruby. The entire repertoire of these iterators is made available to any class by inclusion of the <code>Enumerable</code> module and defining an <code>#each</code> method. An <code>#each</code> is compulsory because iterators rely on it to teach them how to enumerate by calling the method. In this post, I want to discuss related objects: <strong>enumerators</strong>.
+      In my <a ui-sref="t4-enumerable-methods">last post</a>, I covered <code>Enumerable</code> methods, the workhorses of iterating in Ruby. The entire repertoire of these iterators is made available to any class by inclusion of the <code>Enumerable</code> module and defining an <code>#each</code> method. An <code>#each</code> is compulsory because iterators rely on it to teach them how to enumerate by calling the method. In this post, I want to discuss related objects: <strong>enumerators</strong>.
     </p>
     <img src="blog/imgs/enum1.png">
     <h6>A reminder about the <code>#each</code> method.</h6>

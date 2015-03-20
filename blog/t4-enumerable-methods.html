@@ -1,10 +1,11 @@
 <div class="content-wrap">
+  <aside ng-include="'aside.html'"></aside>
   <section class="white-box-2" id="t4">
     <h2>Enumerable Methods</h2>
     <h3>The Power of Container Objects</h3>
     <h4><em>Feb 22, 2015</em></h4>
     <p>
-      The <code>Enumerable</code> module is one of the hallmarks of Ruby. It's an assortment of methods for container objects, like arrays and hashes which I talked about in my previous blog post. These methods streamline the process of performing operations on each of the elements within a container object. The crux of <code>Enumerable</code> is that its inclusion into a class requires an <code>#each</code> method for that class, because enumerable methods call <code>#each</code>. Think of <code>#each</code> as a set of instructions for how to iterate over an object. Once that is set, you can set in motion the pre-existing machinery for enumerable objects! For example the <code>Array#each</code> method looks something like this:
+      The <code>Enumerable</code> module is one of the hallmarks of Ruby. It's an assortment of methods for container objects, like arrays and hashes which I talked about in my <a ui-sref="t3-arrays-hashes">previous blog post</a>. These methods streamline the process of performing operations on each of the elements within a container object. The crux of <code>Enumerable</code> is that its inclusion into a class requires an <code>#each</code> method for that class, because enumerable methods call <code>#each</code>. Think of <code>#each</code> as a set of instructions for how to iterate over an object. Once that is set, you can set in motion the pre-existing machinery for enumerable objects! For example the <code>Array#each</code> method looks something like this:
     </p>
     <img src="blog/imgs/arrayself.png">
     <h6>The <code>Array#each</code> method in action.</h6>

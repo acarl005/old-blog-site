@@ -5,12 +5,14 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans|Raleway:200' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 
 <body>
 
   <div class="backed"></div>
   <nav>
+    <div class="menu"><i class="fa fa-bars"></i> MENU</div>
     <a ui-sref="home">Home</a>
     <a ui-sref="about-me">About Me</div></a>
     <a ui-sref="blog">Blog</div></a>
@@ -21,28 +23,8 @@
 
   <div ui-view></div>
 
-  <aside ng-hide="blog === 0">
-    <h2>Other Posts</h2>
-    <h4>DBC Culture</h4>
-    <h6><a href="c6-stereotype-threat.html">Stereotype Threat</a></h6>
-    <h6><a href="c5-feedback.html">Pairing and Feedback</a></h6>
-    <h6><a href="c4-tech-issues.html">Lack of Diversity</a></h6>
-    <h6><a href="c3-thinking-style.html">Growth vs. Fixed Mindset</a></h6>
-    <h6>Kitchen vs. Table Mindset</h6>
-    <h4>Science</h4>
-    <h6><a href="s2-prop-65.html">California Prop. 65</a></h6>
-    <h6><a href="s1-teixobactin.html">Teixobactin</a></h6>
-    <h4>Programming</h4>
-    <h6><a href="t6-array-proc.html">#to_proc Method</a></h6>
-    <h6><a href="t5-ruby-classes.html">Enumerators</a></h6>
-    <h6><a href="t4-enumerable-methods.html">Enumerable Methods</a></h6>
-    <h6><a href="t3-arrays-hashes.html">Ruby Data Structures</a></h6>
-    <h6><a href="t2-css-design.html">Displaying Content in HTML/CSS</a></h6>
-    <h6><a href="t1-git-blog.html">Git and Github</a></h6>
-  </aside>
-
   <footer>
-    <div><h4>&#169 2015 Andrew Carlson</h4></div>
+    <div class="copyright"><h4>&#169 2015 Andrew Carlson</h4></div>
     <ul>
       <li><a href="http://www.google.com/+AndrewCarlson005"><img src="imgs/google-w.png"></a></li>
       <li><a href="http://www.facebook.com/andy.carlson3"><img src="imgs/facebook-w.png"></a></li>
@@ -54,6 +36,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
