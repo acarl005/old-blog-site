@@ -10,7 +10,7 @@
 
 <body>
 
-  <div class="backed"></div>
+  <div ng-class="{backed:true}"></div>
   <nav>
     <div class="menu"><i class="fa fa-bars"></i> MENU</div>
     <a ui-sref="home">Home</a>
@@ -20,6 +20,7 @@
     <a ui-sref="portfolio">Portfolio</div></a>
     <a ui-sref="contact">Contact</div></a>
   </nav>
+  {{$state.current.name}}{{$state.$current.name}}{{2+2}}
 
   <div ui-view></div>
 

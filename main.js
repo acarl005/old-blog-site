@@ -3,16 +3,23 @@
 
   app.config(function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise("/home");
+    $urlRouterProvider.otherwise("/");
 
-    var pages = ['home', 'about-me', 'blog', 'education', 'portfolio', 'contact'];
+    $stateProvider.state({
+      name: 'home',
+      url: '/',
+      templateUrl: 'partials/home.html',
+      data: 0
+    });
+
+    var pages = ['about-me', 'blog', 'education', 'portfolio', 'contact'];
 
     for (var i = 0; i < pages.length; i++) {
       var obj = {
         name: pages[i],
         url: '/'+pages[i],
         templateUrl: 'partials/'+pages[i]+'.html',
-        data: i
+        data: i + 1
       };
       $stateProvider.state(obj);
     };
