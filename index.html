@@ -10,28 +10,27 @@
 
 <body>
 
-  <div ng-class="{backed:true}"></div>
+  <div ng-class="{backed:$state.current.name!='home'}"></div>
   <nav>
     <div class="menu"><i class="fa fa-bars"></i> MENU</div>
-    <a ui-sref="home">Home</a>
-    <a ui-sref="about-me">About Me</div></a>
-    <a ui-sref="blog">Blog</div></a>
-    <a ui-sref="education">Education</div></a>
-    <a ui-sref="portfolio">Portfolio</div></a>
-    <a ui-sref="contact">Contact</div></a>
+    <a ui-sref="home" ng-class="{active:$state.current.name=='home'}">Home</a>
+    <a ui-sref="about-me" ng-class="{active:$state.current.name=='about-me'}">About Me</div></a>
+    <a ui-sref="blog" ng-class="{active:$state.current.name=='blog'}">Blog</div></a>
+    <a ui-sref="education" ng-class="{active:$state.current.name=='education'}">Education</div></a>
+    <a ui-sref="portfolio" ng-class="{active:$state.current.name=='portfolio'}">Portfolio</div></a>
+    <a ui-sref="contact" ng-class="{active:$state.current.name=='contact'}">Contact</div></a>
   </nav>
-  {{$state.current.name}}{{$state.$current.name}}{{2+2}}
 
   <div ui-view></div>
 
   <footer>
     <div class="copyright"><h4>&#169 2015 Andrew Carlson</h4></div>
     <ul>
-      <li><a href="http://www.google.com/+AndrewCarlson005"><img src="imgs/google-w.png"></a></li>
-      <li><a href="http://www.facebook.com/andy.carlson3"><img src="imgs/facebook-w.png"></a></li>
-      <li><a href="https://www.linkedin.com/profile/view?id=242315253"><img src="imgs/linkedin-w.png"></a></li>
-      <li><a href="https://twitter.com/acarl005"><img src="imgs/twitter2-w.png"></a></li>
-      <li><a href="https://github.com/acarl005"><img src="imgs/github-w.png"></a></li>
+      <li><a href="http://www.google.com/+AndrewCarlson005"><i class="fa fa-google-plus-square"></i></a></li>
+      <li><a href="http://www.facebook.com/andy.carlson3"><i class="fa fa-facebook-square"></i></a></li>
+      <li><a href="https://www.linkedin.com/profile/view?id=242315253"><i class="fa fa-linkedin-square"></i></a></li>
+      <li><a href="https://twitter.com/acarl005"><i class="fa fa-twitter-square"></i></a></li>
+      <li><a href="https://github.com/acarl005"><i class="fa fa-github-square"></i></a></li>
     </ul>
   </footer>
 

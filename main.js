@@ -1,6 +1,27 @@
 (function(){
   var app = angular.module('andySite', ['ui.router']);
 
+  jQuery.fn.rotate = function(degrees) {
+    $(this).css({'-webkit-transform' : 'rotate('+ degrees +'deg)',
+                 '-moz-transform' : 'rotate('+ degrees +'deg)',
+                 '-ms-transform' : 'rotate('+ degrees +'deg)',
+                 'transform' : 'rotate('+ degrees +'deg)'});
+    return $(this);
+  };
+  var rotation = 0;
+
+  app.run( ['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $stateParams) {
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+
+    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+        $('footer .fa').rotate(rotation);
+        rotation += 90;
+        console.log(rotation);
+    });
+
+  }])
+
   app.config(function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise("/");
@@ -8,8 +29,7 @@
     $stateProvider.state({
       name: 'home',
       url: '/',
-      templateUrl: 'partials/home.html',
-      data: 0
+      templateUrl: 'partials/home.html'
     });
 
     var pages = ['about-me', 'blog', 'education', 'portfolio', 'contact'];
@@ -18,8 +38,7 @@
       var obj = {
         name: pages[i],
         url: '/'+pages[i],
-        templateUrl: 'partials/'+pages[i]+'.html',
-        data: i + 1
+        templateUrl: 'partials/'+pages[i]+'.html'
       };
       $stateProvider.state(obj);
     };

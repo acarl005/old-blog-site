@@ -49,6 +49,13 @@ nav a:active {
   background: linear-gradient(to bottom, #0E8187, #031D1F);
 }
 
+.active {
+  background: #031D1F;
+  background: linear-gradient(to bottom, #0E8187, #031D1F);
+  border-left: solid white 1px;
+  border-right: solid white 1px;
+}
+
 footer {
   display: block;
   background: #0E8187;
@@ -71,16 +78,15 @@ footer li {
   padding-right: 15px;
 }
 
-footer img {
-  max-width: 40px;
-  height:auto;
-  transition-duration: 2s;
+footer .fa {
+  font-size: 40px;
+  transition-duration: 1s;
+  color: white;
+  position: relative;
 }
 
-footer img:hover {
-  -ms-transform: rotate(360deg);
-  -webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
+footer .fa:hover {
+  color: gray;
 }
 
 .copyright {
