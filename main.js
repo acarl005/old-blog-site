@@ -1,6 +1,4 @@
 (function(){
-  var app = angular.module('andySite', ['ui.router']);
-
   jQuery.fn.rotate = function(degrees) {
     $(this).css({'-webkit-transform' : 'rotate('+ degrees +'deg)',
                  '-moz-transform' : 'rotate('+ degrees +'deg)',
@@ -9,6 +7,8 @@
     return $(this);
   };
   var rotation = 0;
+
+  var app = angular.module('andySite', ['ui.router']);
 
   app.run( ['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $stateParams) {
     $rootScope.$state = $state;
