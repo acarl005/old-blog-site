@@ -17,9 +17,7 @@
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
         $('footer .fa').rotate(rotation);
         rotation += 90;
-        console.log(rotation);
     });
-
   }])
 
   app.config(function($stateProvider, $urlRouterProvider) {
@@ -58,10 +56,8 @@
 
 })();
 
-function menu() {
+$(document).ready(function(){
   $('.menu').click(function() {
     $('nav a').slideToggle();
   });
-}
-
-$(document).ready(menu)
+});

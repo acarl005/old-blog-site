@@ -4,14 +4,20 @@
     <h2>Displaying Content in HTML/CSS</h2>
     <h3>Padding, Borders, and Margins</h3>
     <h4><em>Feb 11, 2015</em></h4>
-    <img src="http://img2.wikia.nocookie.net/__cb20110115132335/finalfantasy/images/3/36/FF3-DarkKnight.png" />
+    <img src="http://www.downvids.net/video/faceimage/img-119735856.jpg" class="shrink"/>
     <p>
-      Ever wonder how stuff is positioned on a webpage? <del>So do I.</del> It's done with padding, borders, and margins. Imagine the webpage as a party of knights, where each knight is a picture, paragraph, or piece of web content! Each knight has a suit of armor, like the borders on a website. These help make things look nice and organized. But inside these borders is padding, space separating the borders from the content. This is like the clothes beneath the knight's armor!
+      "Ogres are like onions!" exclaims beloved Dreamworks star, Shrek. I think it's a metaphor for his righteous, sentimental heart beneath his monstrous exterior. But if we take it literally, then Shrek has something in common with HTML elements! From innermost to outermost, the layers of HTML elements are content, padding, border, and margins.
     </p>
     <img src="blog/imgs/box-model.gif">
     <h6>Visualizing this model.</h6>
     <p>
-      Finally, imagine they have a force field around them that keeps walls and other knights at a distance. These are the margins. The margins are the outermost separation, pushing away from the rest of the elements. The content and the border are the only parts that are actually visible though. Together, these map out a webpage to make it look polished and pretty!
+      The content is, well, the <em>stuff</em>. If the element is a <code>&ltp&gt</code> then the content is the text. For a <code>&ltimg&gt</code>, it's the image itself. Outside of this is the padding. The padding, set with the <code>padding</code> CSS property, both pushes away the border and extends the background color. The border is exactly what you think it is: a set of lines that surround the content and its padding. It can be specified by a thickness, color, and pattern. You can even round the corners with the <code>border-radius</code> property!
+    </p>
+    <img src="blog/imgs/blogmargins.png">
+    <h6>Highlighting these layers. Also, blogception.
+      { Blue: Content, Green: Padding, Gray: Border, Yellow: Margin }</h6>
+    <p>
+      Here we can see an <strong>absolutely beautiful</strong> implementation of these layers. Without the padding, everything would be very cramped. It looks much more aesthetically delightful with 20px of spacing. The border gives it an orderly look. Finally the margin keeps the sidebar a comfortable distance away. If you want to get a firm grasp on the effects of padding and margins, try opening the Chrome Developer Tools and un-checking the box next to these properties for a selected HTML element. It'll manifest that change in the browser in real time!
     </p>
   </section>
 </div>
