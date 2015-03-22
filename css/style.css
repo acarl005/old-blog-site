@@ -1,6 +1,7 @@
 body {
   margin: auto;
   width: 100%;
+  margin-bottom: 80px;
 }
 
 a {
@@ -28,7 +29,7 @@ nav {
 
 nav a {
   display: inline-block;
-  width: 16.3%;
+  width: 16.25%;
   height: 2em;
   font-family: raleway, sans-serif;
   color: white;
@@ -115,7 +116,6 @@ aside {
 
 #hello {
   margin: auto;
-  margin-bottom: 100px;
   display: block;
   width: 80%;
   font-family: avenir;
@@ -170,7 +170,6 @@ h6 {
 .content-wrap {
   display: block;
   margin-top: 60px;
-  margin-bottom: 100px;
   width: 100%;
 }
 
@@ -293,6 +292,33 @@ ol, ul {
   overflow: scroll;
 }
 
+#contact-menu {
+  position: absolute;
+  top: -360px;
+  left: 30%;
+  right: 30%;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 50px #002525;
+  text-align: center;
+  font-family: raleway;
+  font-weight: bold;
+}
+
+#contact-menu h2 {
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: #E6E6E6 1px solid;
+}
+
+.fa-times {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
 @media (max-width: 960px) {
 
   body {
@@ -330,6 +356,11 @@ ol, ul {
   #hex {
     width: 960px;
     height: 16em;
+  }
+
+  #contact-menu {
+    left: 280px;
+    width: 400px;
   }
 
 }
@@ -418,6 +449,12 @@ ol, ul {
 
   #hex h1 span {
     font-size: 1em;
+  }
+
+  #contact-menu {
+    left: 20px;
+    right: 20px;
+    width: auto;
   }
 
 }

@@ -56,8 +56,20 @@
 
 })();
 
-$(document).ready(function(){
+$(document).ready(function() {
   $('.menu').click(function() {
     $('nav a').slideToggle();
+  });
+
+  $('#contact').click(function() {
+    $('#contact-menu').animate({
+      top: "80px"
+    }, 200);
+  });
+
+  $('.fa-times').click(function() {
+    $('#contact-menu').animate({
+      top: "-360px"
+    }, 200);
   });
 });
