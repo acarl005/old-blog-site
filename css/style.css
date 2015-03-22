@@ -17,6 +17,10 @@ code {
   background-color: #E2F1FF;
 }
 
+h2, h3, h4 {
+  font-weight: lighter;
+}
+
 nav {
   background: #063336;
   background: linear-gradient(to bottom, #031D1F, #0E8187);
@@ -119,7 +123,6 @@ aside {
   display: block;
   width: 80%;
   font-family: avenir;
-  background-color: #E0E0EB;
   padding: 10px;
 }
 
@@ -287,6 +290,10 @@ iframe {
   width: 250px;
 }
 
+.shrinkkk {
+  width: 150px;
+}
+
 ol, ul {
   max-width: 100%;
   overflow: scroll;
@@ -312,11 +319,16 @@ ol, ul {
   border-bottom: #E6E6E6 1px solid;
 }
 
-.fa-times {
+#close {
   position: absolute;
   top: 10px;
   right: 10px;
   cursor: pointer;
+  font-size: 1.5em;
+}
+
+#me {
+  margin-top: 20px;
 }
 
 @media (max-width: 960px) {
@@ -443,12 +455,12 @@ ol, ul {
   }
 
   #hex h1 {
-    font-size: 1.5em;
+    font-size: 20px;
     top: 15px;
   }
 
   #hex h1 span {
-    font-size: 1em;
+    font-size: 15px;
   }
 
   #contact-menu {

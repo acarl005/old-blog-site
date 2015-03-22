@@ -67,7 +67,7 @@ $(document).ready(function() {
     }, 200);
   });
 
-  $('.fa-times').click(function() {
+  $('#close').click(function() {
     $('#contact-menu').animate({
       top: "-360px"
     }, 200);
