@@ -5,15 +5,15 @@
     <h3>Arrays vs. Hashes</h3>
     <h4><em>Feb 16, 2015</em></h4>
     <p>
-      Ruby has objects similar to other object-oriented programming languages: numbers, strings, and booleans. Two of the <em>container</em> objects I want to talk about in this post are arrays and hashes! Imagine an array as a stack of papers. On each paper is an object. It can be an integer, string, or even an array! Each page in the stack can be easily referenced by its page number, denoted by an integer. Think of an array as an ordered list.
+      Ruby has objects similar to other object-oriented programming languages: numbers, strings, and booleans. These are some of the bricks upon which programs are founded. But the complexity of an application comes from the synthesis and organization of these elements in <strong>container objects</strong>. Two of the container objects I want to talk about in this post are arrays and hashes! Imagine an array as a stack of papers. On each paper is an object. It can be an integer, string, or even another array! Each page in the stack can be easily referenced by its page number, denoted by an integer. Think of an array as an ordered list. In the code, it looks like a list of objects separated by commas.
     </p>
     <img src="blog/imgs/arrayhash.png">
     <h6>An example of an array and a hash.</h6>
     <p>
-      Hashes are a bit more conceptually complex, but very analogous. Now imagine a stack of folders, each with only one page within it. These folders have a tab at the top on which any object can be written. It's similar to an array, but instead of these contents being referenced by an integer, or page number, it can be referenced by any object, or "key". Prior to Ruby 1.9, hases were not ordered, like arrays. However, now hashes are ordered by default in the same sequence which they are entered.
+      Hashes are a bit more conceptually complex, but very analogous. Now imagine a stack of folders, each with only one page within it. These folders have a tab at the top on which any object can be written. It's similar to an array, but instead of these contents being referenced by an integer, or page number, it can be referenced by any object, or "key". For example, the hash shown above, <code>my_info</code>, can be thought of as a representation of me! The keys are meaningful information like my name and age. It implies a purpose unlike referencing array elements with mere integers.
     </p>
     <p>
-      Arrays are convenient because they can be sorted. However, inserting into sorted arrays is expensive, requiring <em>O(n)</em> time. Inserting into hashes is much more efficient! So if your task requires far more insertions than look-ups, maybe a hash is more suitable for the job!
+      Prior to Ruby 1.9, hashes were not ordered like arrays are. However, now hashes are ordered by default in the same sequence which they are entered. Arrays are convenient because they can be sorted. However, inserting into sorted arrays is expensive, requiring <em>O(n)</em> time. Hashes cannot be sorted but they aren't meant to be. Inserting into hashes is much more efficient! So if your task requires far more insertions than look-ups, maybe a hash is more suitable for the job!
     </p>
   </section>
 </div>
