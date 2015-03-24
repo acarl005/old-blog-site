@@ -137,11 +137,21 @@ aside {
   transform: rotate(90deg);
 }
 
+.inline {
+  display: inline-block;
+}
+
 #cover {
   width: 100%;
   height: 100%;
   background-color: white;
 }
+
+.chevron {
+  cursor: pointer;
+}
+
+
 
 aside h2, aside h4 {
   margin-left: 20px;

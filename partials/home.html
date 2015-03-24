@@ -5,17 +5,28 @@
 <div id="cover">
   <section id="hello">
     <h2>Welcome to Andrew's Website!</h2>
-    <section>
-      <h6 class="chevron"><i class="fa fa-chevron-right"></i> Feb 20, 2015</h6>
-      <p>Welcome web traveller! You've found the website I've been building as a project for Dev Bootcamp. So far it's made of just HTML/CSS. It'll grow as I do throughout the program. If you'd like to know more about me, have a look around!</p>
-    </section>
-    <section>
-      <h6 class="chevron"><i class="fa fa-chevron-right"></i> Feb 26, 2015</h6>
-      <p>I've added responsive design! In order to make it look nice on all screens, I've utilized media query in my CSS. It now reacts to the width of the page. You can resize the browser window to see what it'll look like. Check out what the nav bar does when squeezed under 500px!</p>
-    </section>
-    <section>
-      <h6 class="chevron"><i class="fa fa-chevron-right"></i> Mar 19, 2015</h6>
-      <p>I've given the site a JavaScript makeover! It now has responsive elements, like the menu button on the nav bar when the width is 500px or less. I've also organized the content using AngularJS, not because I thought is was necessary for this website, but to practice UI routing.</p>
-    </section>
+    <article>
+      <h6 class="chevron" ng-click="home.tab = 0">
+        <div class='inline' ng-class="{rotate:home.tab === 0}">
+          <i class="fa fa-chevron-right"></i>
+        </div> Feb 20, 2015
+      </h6>
+      <p ng-show="home.tab === 0">Welcome web traveller! You've found the website I've been building as a project for Dev Bootcamp. So far it's made of just HTML/CSS. It'll grow as I do throughout the program. If you'd like to know more about me, have a look around!</p>
+    </article>
+    <article>
+      <h6 class="chevron" ng-click="home.tab = 1">
+        <div class='inline' ng-class="{rotate:home.tab === 1}">
+          <i class="fa fa-chevron-right"></i>
+        </div> Feb 26, 2015
+      </h6>
+      <p ng-show="home.tab === 1">I've added responsive design! In order to make it look nice on all screens, I've utilized media query in my CSS. It now reacts to the width of the page. You can resize the browser window to see what it'll look like. Check out what the nav bar does when squeezed under 500px!</p>
+    </article>
+    <article>
+      <h6 class="chevron" ng-click="home.tab =2">
+        <div class='inline' ng-class="{rotate:home.tab === 2}">
+          <i class="fa fa-chevron-right"></i>
+        </div> Mar 19, 2015</h6>
+      <p ng-show="home.tab === 2">I've given the site a JavaScript makeover! It now has responsive elements, like the menu button on the nav bar when the width is 500px or less. I've also organized the content using AngularJS, not because I thought is was necessary for this website, but to practice UI routing.</p>
+    </article>
   </section>
 </div>

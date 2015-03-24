@@ -27,7 +27,9 @@
     $stateProvider.state({
       name: 'home',
       url: '/',
-      templateUrl: 'partials/home.html'
+      templateUrl: 'partials/home.html',
+      controller: 'HomeController',
+      controllerAs: 'home'
     });
 
     var pages = ['about-me', 'blog', 'education', 'portfolio', 'contact'];
@@ -52,6 +54,10 @@
       $stateProvider.state(obj);
     };
 
+  });
+
+  app.controller('HomeController', function() {
+    this.tab = 0
   });
 
 })();
