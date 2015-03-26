@@ -25,14 +25,24 @@
 
   <div class="container">
     <ul class="nav nav-pills">
-      <li role="presentation"><a href="#">Create</a></li>
-      <li role="presentation"><a href="#">Local Changes</a></li>
-      <li role="presentation"><a href="#">Commit History</a></li>
-      <li role="presentation"><a href="#">Branches &amp Tags</a></li>
-      <li role="presentation"><a href="#">Update &amp Publish</a></li>
-      <li role="presentation"><a href="#">Merge &amp Rebase</a></li>
-      <li role="presentation"><a href="#">Undo</a></li>
+      <li role="presentation" class="active"><a href="create.html">Create</a></li>
+      <li role="presentation"><a href="local_changes.html">Local Changes</a></li>
+      <li role="presentation"><a href="commit_history.html">Commit History</a></li>
+      <li role="presentation"><a href="branches.html">Branches &amp Tags</a></li>
+      <li role="presentation"><a href="update.html">Update &amp Publish</a></li>
+      <li role="presentation"><a href="merge.html">Merge &amp Rebase</a></li>
+      <li role="presentation"><a href="undo.html">Undo</a></li>
     </ul>
+    <div class="container">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h4>Clone an existing repository</h4>
+              <code>$ git clone ssh://user@domain.com/repo.git</code>
+              <h4>Create a new local repository</h4>
+              <code>$ git init</code>
+            </div>
+          </div>
+    </div>
   </div>
 
   <script type="text/javascript" src="js/bootstrap.js"></script>
