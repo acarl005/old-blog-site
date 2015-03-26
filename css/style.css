@@ -151,10 +151,9 @@ aside {
   cursor: pointer;
 }
 
-
-
-aside h2, aside h4 {
+aside h2, aside h4, aside p {
   margin-left: 20px;
+  margin-right: 20px;
 }
 
 aside h6, aside h4 {
@@ -229,19 +228,6 @@ h6 {
 
 .white-box-2 h3 {
   color: gray;
-}
-
-.white-box-3 h4 {
-  font-weight: bold;
-}
-
-.white-box-3 a {
-  text-decoration: none;
-  color:  #0099ff;
-}
-
-.white-box-3 a:hover {
-  color: #0E8187;
 }
 
 img, iframe {
