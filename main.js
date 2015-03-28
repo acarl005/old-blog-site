@@ -43,7 +43,7 @@
       $stateProvider.state(obj);
     };
 
-    var blogs = ['s1-teixobactin', 's2-prop-65', 's3-chemophobia', 't1-git-blog', 't2-css-design', 't3-arrays-hashes', 't4-enumerable-methods', 't5-ruby-classes', 't6-array-proc', 't7-javascript', 'c1-chefs-kitchen', 'c3-thinking-style', 'c4-tech-issues', 'c5-feedback', 'c6-stereotype-threat'];
+    var blogs = ['s1-teixobactin', 's2-prop-65', 's3-chemophobia', 't1-git-blog', 't2-css-design', 't3-arrays-hashes', 't4-enumerable-methods', 't5-ruby-classes', 't6-array-proc', 't7-javascript', 't8-tech', 'c1-chefs-kitchen', 'c3-thinking-style', 'c4-tech-issues', 'c5-feedback', 'c6-stereotype-threat'];
 
     for (var i = 0; i < blogs.length; i++) {
       var obj = {

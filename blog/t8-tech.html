@@ -1,0 +1,31 @@
+<div class="content-wrap">
+  <aside ng-include="'aside.html'"></aside>
+  <section class="white-box-2" id="t8">
+    <h2>Recursive Functions</h2>
+    <h3>Go Recurse Yourself</h3>
+    <h4><em>Mar 27, 2015</em></h4>
+    <p>
+      Recursion is a personal fascination. It's a programming paradigm hailed by many as an elegant approach to solve problems. To approach a problem via recursion is to break that problem into a sequence of increasingly <em>smaller instances</em> of the same problem. To be more concrete, a recursive function is one that <strong>calls itself</strong>, thereby repeating sequentially and reducing the problem each time. Like looping, it entails the repeated execution of a portion of code. However, it differs in that each recursion reduces the complexity of the problem, whittling it down to its solution. For example, let's use this strategy to write a Ruby method that does basic exponentiation.
+    </p>
+    <img src="blog/imgs/expo_recursion.png">
+    <h6>A recursive method.</h6>
+    <p>
+      This method first checks if the exponent is 0. If so, it returns 1. It then multiplies the base by the output of, well, itself with the exponent decremented by one. The method will get repeated until the exponent eventually homes in on 1, stopping the repetition. In other words, the solution to 2<sup>4</sup> is trimmed down to 2<sup>3</sup> which is trimmed to 2<sup>2</sup> and so on.
+    </p>
+    <p>
+      The same thing can also be accomplished by using a simple loop or a <code>#times</code> method. In fact, doing so would produce a program that executes roughly 10 times faster. Writing a recursive function comes at a hefty performance cost. In some contexts, this is compensated for by a dramatic improvement in the readability of the code. Let's look at an example that is drastically simplified by using recursion: finding the <a href="http://en.wikipedia.org/wiki/Determinant">determinant of a matrix</a>.
+    </p>
+    <img src="blog/imgs/matrix.gif">
+    <p>
+      The determinant is a useful number associated with a square matrix in linear algebra. For this method we'll use the <a href="http://mathworld.wolfram.com/DeterminantExpansionbyMinors.html">method of minors</a>. The input for the method will be a 2D array, each inner array representing one row of the matrix from top to bottom.
+    </p>
+    <img src="blog/imgs/matrix_recursion.png">
+    <h6>A method for calculating the determinant of a matrix.</h6>
+    <p>
+      In a manner similar to the exponent method, the method checks if the matrix is 2x2. If it is, the simple cross multiplication method is used. Otherwise, the <code>make_minor</code> method is used to map each of the minors to a new array with the appropriate coefficients. These terms are then added using <code>#inject</code> to arrive at the determinant! As we can see, the recurring problem is the determinant of each minor. The size of the minors decreases by once each time, eventually converging to 2, where the repetition terminates.
+    </p>
+    <p>
+      Hopefully I've convinced you of the elegance and simplicity endowed on a program with a judicious use of recursion! Using a loop would make the <code>matrix_determ</code> method far more complicated. Although it's an expensive approach, it may be worth it to refine your code. For more discussion of recursive functions, see <a href="http://eloquentjavascript.net/03_functions.html">chapter 3 of Eloquent JavaScript</a>.
+    </p>
+  </section>
+</div>
