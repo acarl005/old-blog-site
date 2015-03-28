@@ -1,0 +1,42 @@
+<head>
+  <title>Andrew's Blog</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans|Raleway:200' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div class="backed"></div>
+  <div class="content-wrap">
+    <section class="white-box-2" id="c8">
+      <h2>Conflict</h1>
+      <h3>How to (Attempt to) Resolve It</h2>
+      <h4><em>Mar 27, 2015</em></h4>
+      <p>
+        Pair programming has done so much to enrich my experience at Dev Bootcamp. I've bonded with my colleagues, learned from their experience and perspectives, and grown into a more empathetic programmer. But pair programming has an inevitable experience: conflict. Although we try to be accommodating and open-minded to avoid conflict, it's an inexorable part of working with others. One must accept this and learn to resolve conflict in the most prudent manner. Let me give you an experience of my own
+      </p>
+      <p>
+        It was part of a challenge for phase 0 at DBC. We were tasked with writing a method that took two parameters: an array of integers and strings, and a number. This method was to add the value of this number to each of the integers in the array. After pondering the challenge, I wrote the following.
+      </p>
+      <p>
+        <code>def my_array_modification_method!(arr, num)<br>
+          &nbsp arr.map! {|x| x.is_a?(Integer) ? x + num : x}<br>
+          end
+        </code>
+      </p>
+      <p>
+        <strong>"Beautiful!"</strong> I thought. Short and sweet. One line for one job. What a pretty solution! I was reaping the benefits of a high-level language–short but highly expressive code. But my euphoria was short-lived.
+      </p>
+      <p>
+        "It's not readable at all," said my partner. "I hate the ternary operator, it's so confusing... Why don't we just write it out as an if/elsif statement? It's longer but it's much clearer." I felt as if my sand castle was getting kicked over. It was heartbreaking to have my <em>art</em> get rejected. A debate ensued. I felt frustrated because my partner didn't appreciate my work. But that wasn't the heart of the conflict. After some introspection, I realized I was scared. My ideas about what constitutes "good code" was being challenged. I held brevity in very high regard. Was I wrong to strive for this? I thought my solution was still very readable. If we were going to get through this challenge, I needed to know if I was set down the wrong path. It was stressful to think that my very way of benchmarking code may need to be reevaluated.
+      </p>
+      <p>
+        We decided to take our dilemma to office hours to get the input of an experienced programmer. She explained that both are valid solutions. As new programmers, it's good to use the fundamentals like if/elsif statements. Indeed, shorter is not always better, like when it robs the code of its readability. But she when on to say that this was a very reasonable use of the ternary operator. The code was readable and desirably short. She recommended that we use the shorter version to submit for the refactored solution.
+      </p>
+      <p>
+        In this situation, it came down to a disagreement about the criteria of good code. Rather than arguing about this challenge and going in circles, it's better to try to identify the fundamental reason for the conflict, and find an unbiased way to resolve it. In this case, asking a professional was beneficial for both of us.
+      </p>
+    </section>
+  </div>
+</main>
+
