@@ -33,7 +33,16 @@
 }
 
 .navbar-default .navbar-text {
-  color: #cccccc;
+  color: #BBBBBB;
+}
+
+.navbar-default.navbar-static-bottom {
+  background: linear-gradient(to bottom, #FAFAFA, #D0D0D0);
+  border-top: 1px solid #D0D0D0;
+}
+
+.navbar-default.navbar-static-top {
+  margin-bottom: 30px;
 }
 
 .panel {
