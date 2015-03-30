@@ -34,13 +34,14 @@ List.prototype.sortType = function() {
   return this;
 }
 
-var milk = new Item('milk', 'dairy', 3.00)
-var oranges = new Item('oranges', 'fruit', 2.50)
-var avocados = new Item('avocados', 'fruit', 5.50)
-var steak = new Item('steak', 'meat', 10.00)
+var milk = new Item('milk', 'dairy', 3)
+var oranges = new Item('oranges', 'fruit', 2)
+var avocados = new Item('avocados', 'fruit', 5)
+var steak = new Item('steak', 'meat', 10)
+var slimJim = new Item('slim jim', 'meat', 1)
 
 var test = new List(milk, oranges, steak)
-test.add(milk, avocados)
+test.add(milk, avocados, slimJim)
 
 test.remove(milk);
 console.log(test.contents);
@@ -56,9 +57,9 @@ var ListHeader = React.createClass({
     return (
       <thead>
         <tr className="stuff">
-          <th> Item ({this.props.list.contents.length} total)</th>
+          <th> Item <br />({this.props.list.contents.length} total)</th>
           <th> Type </th>
-          <th> Price (${this.props.list.totalCost()}) </th>
+          <th> Price <br />(${this.props.list.totalCost()}) </th>
         </tr>
       </thead>
     );
@@ -120,6 +121,9 @@ var ListWindow = React.createClass({
     this.refs.name.getDOMNode().value = '';
     this.refs.type.getDOMNode().value = '';
     this.refs.price.getDOMNode().value = '';
+    document.cookie="username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC";
+    var x = document.cookie;
+    console.log(x);
   },
   deleteStuff: function (event) {
     event.preventDefault();
@@ -143,7 +147,7 @@ var ListWindow = React.createClass({
       <div className="container">
 
         <div className="row">
-          <div className="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+          <div className="col-xs-10 col-sm-10 col-md-10 col-lg-10">
             <table className="table table-hover">
               <ListHeader list={this.state.data} />
               <ListBody list={this.state.data} />
@@ -153,7 +157,7 @@ var ListWindow = React.createClass({
             <form id="delete" onSubmit={this.deleteStuff}>
               <table className="table table-hover">
                 <thead><tr><th>
-                  <button type="submit">
+                  <button type="submit" id="trash"><br />
                   <span className="glyphicon glyphicon-trash" aria-hidden="true" onClick={this.deleteStuff}></span>
                   </button>
                 </th></tr></thead>
