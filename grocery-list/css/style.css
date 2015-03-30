@@ -17,3 +17,19 @@ td {
   max-width: 140px;
   overflow: scroll;
 }
+
+footer {
+  background-color: #43434C;
+  background: linear-gradient(to bottom, #444, #14141F);
+  margin-top: 100px;
+  padding: 20px;
+  color: white;
+}
+
+.panel {
+  margin-bottom: 0;
+}
+
+.navbar-brand a {
+  color: #ccc;
+}

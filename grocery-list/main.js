@@ -121,9 +121,6 @@ var ListWindow = React.createClass({
     this.refs.name.getDOMNode().value = '';
     this.refs.type.getDOMNode().value = '';
     this.refs.price.getDOMNode().value = '';
-    document.cookie="username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC";
-    var x = document.cookie;
-    console.log(x);
   },
   deleteStuff: function (event) {
     event.preventDefault();
