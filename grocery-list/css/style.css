@@ -5,6 +5,10 @@
   color: #00CCFF;
 }
 
+#trash:hover {
+  color: #000;
+}
+
 .btn {
   margin-right: 20px;
 }
