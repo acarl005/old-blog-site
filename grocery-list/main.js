@@ -44,10 +44,8 @@ var test = new List(milk, oranges, steak)
 test.add(milk, avocados, slimJim)
 
 test.remove(milk);
-console.log(test.contents);
-console.log(test.totalCost());
 test.sortType();
-console.log(test.contents);
+
 
 //----------------------------------------
 
@@ -178,7 +176,6 @@ var ListWindow = React.createClass({
     this.setState({data: this.props.data});
   },
   handleAddItem: function(item) {
-    console.log(item);
     this.props.data.add(item);
     this.setState({data: this.props.data});
   },
