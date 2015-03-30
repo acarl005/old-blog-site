@@ -5,20 +5,20 @@
     <h3>What Are You Getting Loopy For?</h3>
     <h4><em>Mar 19, 2015</em></h4>
     <p>
-      Ruby is a very high-level language. This is merited by its myriad of built in functionality. The power in its methods make Ruby programs petite and elegant, much like their brilliant gemstone namesake. Rarely do other languages beat the beauty and brevity of Ruby. However, this level of refinement comes with a performance cost. Ruby programs are slower to execute. JavaScript is a faster language that comes <em>close</em> to Ruby's ritzy methods. JavaScript is also far more widely used, <strong>so it's valuable to know.</strong>
+      Ruby is a very high-level language, meaning you can express a lot with only a few lines of code. This is merited by its myriad of built in functionality. The power in its methods make Ruby programs petite and elegant, much like their brilliant gemstone namesake. Rarely do other languages beat the beauty and brevity of Ruby. However, this level of refinement comes with a performance cost. Ruby programs are slower to execute and they tend to scale poorly. JavaScript is a faster language that comes <em>close</em> to Ruby's ritzy methods. JavaScript is also far more widely used, <strong>so it's valuable to know.</strong>
     </p>
     <p>
-      Although JavaScript doesn't match Ruby's highly reliable <code>Enumerable</code> methods, there are things that it does better than Ruby (besides speed). Essentially every one of Ruby's <code>Enumerable</code> methods can be emulated in JavaScript using a <code>for</code> loop. Shown below is an example of a <code>for</code> loop being used.
+      Although JavaScript doesn't match Ruby's highly numerous, reliable <code>Enumerable</code> methods, there are things that it does better than Ruby (besides speed). Essentially every one of Ruby's <code>Enumerable</code> methods can be emulated in JavaScript using a <code>for</code> loop. Shown below is an example of a <code>for</code> loop being used.
     </p>
     <img src="blog/imgs/JSfor4.jpg">
     <h6>Using a <code>for</code> loop to calculate the sum of all integers from 1 to 100.</h6>
     <p>
-      In the parentheses after <code>for</code> is where the magic happens. The first expression establishes a counter variable, <code>i</code> by convention. The second expression decides when the loop is over: when it evaluates to <code>false</code>. The third expression determines <em>how</em> we're counting, i.e. it doesn't necessarily count up by one after each iteration. These <code>for</code> loops are ubiquitous in JavaScript programs! Ruby has <code>for</code> loops as well, but they are less modular. They are typically defined by a range and can only increment by one. Let's compare them by using each to write a program to insert commas into an integer.
+      In the parentheses after <code>for</code> is where the magic happens. The first expression establishes a counter variable, <code>i</code>, by convention. The second expression decides when the loop is over: when it evaluates to <code>false</code>. The third expression determines <em>how</em> we're counting, i.e. it doesn't necessarily count up by one after each iteration. These <code>for</code> loops are ubiquitous in JavaScript programs! Ruby has <code>for</code> loops as well, but they are less modular. They are typically defined by a range and can only increment by one. Let's compare them by using each to write a program to insert commas into an integer.
     </p>
     <img src="blog/imgs/JSfor3.jpg">
     <h6>Can we write a function that takes a number and returns a string with commas properly inserted into the number?</h6>
     <p>
-      JavaScript has no built-in method to insert characters into strings at a bespoke index. However, it can be done with an <em>array</em> of characters. Therefore we can call <code>String()</code> followed by <code>split()</code> to convert the number. We'll then use a <code>for</code> loop to repeat the <code>splice()</code> method.
+      JavaScript has no built-in method to directly insert characters into a string at a certain index. However, it can be done with an <em>array</em> of characters. Therefore we can call <code>String()</code> followed by <code>split()</code> to convert the number to an array. We'll then use a <code>for</code> loop to repeat the <code>splice()</code> method.
     </p>
     <img src="blog/imgs/JSfor2.png">
     <h6>A JavaScript<code>for</code> loop in action.</h6>
@@ -31,7 +31,7 @@
       Although Ruby allows us to operate directly on a string, the <code>for</code> loop is a bit... clumsier. We had to do a calculation to stop the loop in the right place. We also had to do a calculation on <code>i</code> inside the body of the loop. The pattern and intent in the JavaScript example is much clearer. Much more coercion is needed to use a Ruby <code>for</code> loop for this challenge.
     </p>
     <p>
-      So even though Ruby has the most inherent functionality, it doesn't have the most elegant answer to <em>everything</em>. The fundamentals are best handled by more simple languages.
+      So even though Ruby has the most inherent functionality, it doesn't have the most elegant answer to <em>everything</em>. The fundamentals are best handled by simpler languages.
     </p>
   </section>
 </div>

@@ -5,17 +5,17 @@
     <h3>The Brains of Iteration</h3>
     <h4><em>Mar 5, 2015</em></h4>
     <p>
-      In my <a ui-sref="t4-enumerable-methods">last post</a>, I covered <code>Enumerable</code> methods, the workhorses of iterating in Ruby. The entire repertoire of these iterators is made available to any class by inclusion of the <code>Enumerable</code> module and defining an <code>#each</code> method. An <code>#each</code> is compulsory because iterators rely on it to teach them how to enumerate by calling the method. In this post, I want to discuss related objects: <strong>enumerators</strong>.
+      In my <a ui-sref="t4-enumerable-methods">last post</a>, I covered <code>Enumerable</code> methods, the workhorses of iterating in Ruby. The entire repertoire of these iterators is made available to any class by inclusion of the <code>Enumerable</code> module and defining an <code>#each</code> method. An <code>#each</code> is compulsory because iterators rely on it to teach them how to enumerate. In this post, I want to discuss related objects: <strong>enumerators</strong>.
     </p>
     <img src="blog/imgs/enum1.png">
     <h6>A reminder about the <code>#each</code> method.</h6>
     <p>
-      Enumerators are instances of the class <code>Enumerator</code>, which includes <code>Enumerable</code>. Think of them as a set of instructions on how to enumerate. However, they differ in that they are <em>not</em> methods. They aren't container objects either, so their is no implicit basis for an <code>#each</code> operation. Rather, the logic for enumeration must be specified in the instantiation of the enumerator. This can be done either by calling <code>Enumerator.new</code> with a code block containing the "each" logic you want it to follow, or by creating it from a container object, e.g. array or range. Shown below is an example of the former.
+      Enumerators are instances of the class <code>Enumerator</code>, which includes <code>Enumerable</code>. Think of them as a set of instructions on how to enumerate. However, they differ from <code>#each</code> in that they are <em>not</em> methods. They aren't container objects either, so their is no implicit basis for an <code>#each</code> operation. Rather, the logic for enumeration must be specified in the instantiation of the enumerator. This can be done either by calling <code>Enumerator.new</code> with a code block containing the "each" logic you want it to follow, or by creating it from a container object, e.g. array or range. Shown below is an example of the former.
     </p>
     <img src="blog/imgs/enum2.png">
     <h6>Creating a new instance of <code>Enumerator</code>.</h6>
     <p>
-      When <code>#each</code> is called on <code>foo</code>, it will yield 1, then 2, then 3. The parameter <code>y</code> is a <em>yielder</em>, an instance of <code>Enumerator::Yielder</code>, automatically passed to the block. Alternatively, one can be created from an enumerable object. This is done by calling the each method <em>without giving it a block</em>.
+      When <code>#each</code> is called on <code>foo</code>, it will yield 1, then 2, then 3. The parameter <code>y</code> is a <em>yielder</em>, an instance of <code>Enumerator::Yielder</code>, automatically passed to the block. Alternatively, an enumerator can be created from an enumerable object. This is done by calling the each method <em>without giving it a block</em>.
     </p>
     <img src="blog/imgs/enum3.png">
     <h6>Creating an enumerator with <code>Array#each</code>. Enumerators aren't actually displayed this way when printed.</h6>

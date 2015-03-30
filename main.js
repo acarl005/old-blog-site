@@ -43,13 +43,15 @@
       $stateProvider.state(obj);
     };
 
-    var blogs = ['s1-teixobactin', 's2-prop-65', 's3-chemophobia', 't1-git-blog', 't2-css-design', 't3-arrays-hashes', 't4-enumerable-methods', 't5-ruby-classes', 't6-array-proc', 't7-javascript', 't8-tech', 'c1-chefs-kitchen', 'c3-thinking-style', 'c4-tech-issues', 'c5-feedback', 'c6-stereotype-threat'];
+    var blogs = ['s1-teixobactin', 's2-prop-65', 's3-chemophobia', 't1-git-blog', 't2-css-design', 't3-arrays-hashes', 't4-enumerable-methods', 't5-ruby-classes', 't6-array-proc', 't7-javascript', 't8-tech', 'c1-chefs-kitchen', 'c3-thinking-style', 'c4-tech-issues', 'c5-feedback', 'c6-stereotype-threat', 'c9-completions'];
 
     for (var i = 0; i < blogs.length; i++) {
       var obj = {
         name: blogs[i],
         url: '/blog/'+blogs[i],
-        templateUrl: 'blog/'+blogs[i]+'.html'
+        templateUrl: 'blog/'+blogs[i]+'.html',
+        controller: 'AsideController',
+        controllerAs: 'aside'
       };
       $stateProvider.state(obj);
     };
@@ -58,6 +60,10 @@
 
   app.controller('HomeController', function() {
     this.tab = 0
+  });
+
+  app.controller('AsideController', function($state) {
+    this.tab = $state.current.name[0]
   });
 
 })();

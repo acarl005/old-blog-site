@@ -49,7 +49,7 @@ console.log(test.totalCost());
 test.sortType();
 console.log(test.contents);
 
-
+//----------------------------------------
 
 
 var ListHeader = React.createClass({
@@ -71,7 +71,7 @@ var ListBody = React.createClass({
     var tableNodes = this.props.list.contents.map(function (item) {
       var thisPrice = parseFloat(Math.round(item.price * 100) / 100).toFixed(2);
       return (
-        <tr className="stuff">
+        <tr className="tableRow">
           <td> {item.name} </td>
           <td> {item.type} </td>
           <td> ${thisPrice} </td>
@@ -82,6 +82,81 @@ var ListBody = React.createClass({
       <tbody>
         {tableNodes}
       </tbody>
+    );
+  }
+});
+
+var AddForm = React.createClass({
+  addItem: function(event) {
+    event.preventDefault();
+    var itemName = this.refs.name.getDOMNode().value.trim();
+    var itemType = this.refs.type.getDOMNode().value.trim();
+    var itemPrice = this.refs.price.getDOMNode().value.trim();
+    if (isNaN(+itemPrice)) {
+      alert('Price must be a number.');
+      return;
+    }
+    if (!itemName) {
+      alert('Item must have a name.');
+      return;
+    }
+    var newItem = new Item(itemName, itemType, itemPrice);
+    this.props.onUserInput(newItem);
+    this.refs.name.getDOMNode().value = '';
+    this.refs.type.getDOMNode().value = '';
+    this.refs.price.getDOMNode().value = '';
+  },
+  render: function() {
+    return (
+      <form className="form-inline" onSubmit={this.addItem}>
+          <div className="form-group">
+            <input type="text" className="form-control" ref="name" placeholder="item name" />
+          </div>
+          <div className="form-group">
+            <input type="text" className="form-control" ref="type" placeholder="type" />
+          </div>
+          <div className="form-group">
+            <input type="text" className="form-control" ref="price" placeholder="price" />
+          </div>
+          <button type="submit" className="btn btn-primary"> Submit </button>
+        </form>
+    );
+  }
+});
+
+var DeleteForm = React.createClass({
+  deleteStuff: function (event) {
+    event.preventDefault();
+    var deleteThese = [];
+    for (ind in this.refs) {
+      if (this.refs[ind].getDOMNode().checked) {
+        deleteThese.push(this.props.list.contents[ind]);
+        this.refs[ind].getDOMNode().checked = false;
+      }
+    };
+    this.props.onUserInput(deleteThese);
+  },
+  render: function() {
+    var deleteNodes = this.props.list.contents.map(function (_, i) {
+      return (
+        <tr className="stuff">
+          <td> <input type="checkbox" ref={i} value={i}/> </td>
+        </tr>
+      );
+    });
+    return (
+      <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+        <form id="delete" onSubmit={this.deleteStuff}>
+          <table className="table table-hover">
+            <thead><tr><th>
+              <button type="submit" id="trash"><br />
+              <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
+              </button>
+            </th></tr></thead>
+            <tbody>{deleteNodes}</tbody>
+          </table>
+        </form>
+      </div>
     );
   }
 });
@@ -102,44 +177,18 @@ var ListWindow = React.createClass({
     this.props.data = new List();
     this.setState({data: this.props.data});
   },
-  addItem: function (event) {
-    event.preventDefault();
-    var itemName = this.refs.name.getDOMNode().value.trim();
-    var itemType = this.refs.type.getDOMNode().value.trim();
-    var itemPrice = this.refs.price.getDOMNode().value.trim();
-    if (isNaN(+itemPrice)) {
-      alert('Price must be a number.');
-      return;
-    }
-    if (!itemName) {
-      alert('Item must have a name.');
-      return;
-    }
-    var newItem = new Item(itemName, itemType, itemPrice);
-    this.props.data.contents.push(newItem);
+  handleAddItem: function(item) {
+    console.log(item);
+    this.props.data.add(item);
     this.setState({data: this.props.data});
-    this.refs.name.getDOMNode().value = '';
-    this.refs.type.getDOMNode().value = '';
-    this.refs.price.getDOMNode().value = '';
   },
-  deleteStuff: function (event) {
-    event.preventDefault();
-    for (ind in this.refs) {
-      if (this.refs[ind].getDOMNode().checked) {
-        this.props.data.contents.splice(ind, 1);
-        this.setState({data: this.props.data});
-        this.refs[ind].getDOMNode().checked = false;
-      }
-    };
+  handleDelete: function (deleteThese) {
+    deleteThese.forEach(function(item) {
+      this.props.data.remove(item);
+    }.bind(this));
+    this.setState({data: this.props.data})
   },
   render: function() {
-    var deleteNodes = this.props.data.contents.map(function (_, i) {
-      return (
-        <tr className="stuff">
-          <td> <input type="checkbox" ref={i} value={i}/> </td>
-        </tr>
-      );
-    });
     return (
       <div className="container">
 
@@ -150,18 +199,7 @@ var ListWindow = React.createClass({
               <ListBody list={this.state.data} />
             </table>
           </div>
-          <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-            <form id="delete" onSubmit={this.deleteStuff}>
-              <table className="table table-hover">
-                <thead><tr><th>
-                  <button type="submit" id="trash"><br />
-                  <span className="glyphicon glyphicon-trash" aria-hidden="true" onClick={this.deleteStuff}></span>
-                  </button>
-                </th></tr></thead>
-                <tbody>{deleteNodes}</tbody>
-              </table>
-            </form>
-          </div>
+          <DeleteForm onUserInput={this.handleDelete} list={this.state.data} />
         </div>
 
         <button onClick={this.sortPrice} className="btn btn-default"> Sort Price </button>
@@ -169,18 +207,8 @@ var ListWindow = React.createClass({
         <button onClick={this.clearList} className="btn btn-danger"> Clear List </button>
 
         <h3>Add Items</h3>
-        <form className="form-inline" onSubmit={this.addItem}>
-          <div className="form-group">
-            <input type="text" className="form-control" ref="name" placeholder="item name" />
-          </div>
-          <div className="form-group">
-            <input type="text" className="form-control" ref="type" placeholder="type" />
-          </div>
-          <div className="form-group">
-            <input type="text" className="form-control" ref="price" placeholder="price" />
-          </div>
-          <button type="submit" className="btn btn-primary"> Submit </button>
-        </form>
+        <AddForm onUserInput={this.handleAddItem} />
+
       </div>
     );
   }
