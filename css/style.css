@@ -310,7 +310,7 @@ ol, ul {
   border-radius: 5px;
   box-shadow: 0px 0px 50px #002525;
   text-align: center;
-  font-family: raleway;
+  font-family: raleway, avenir;
   font-weight: bold;
 }
 
@@ -331,6 +331,29 @@ ol, ul {
 
 #me {
   margin-top: 20px;
+}
+
+.ng-enter {
+  transition: 0.75s;
+  opacity: 0;
+}
+
+.ng-enter-active {
+  opacity: 1;
+}
+
+.hide {
+  transition: 0.75s;
+  opacity: 1;
+}
+
+.hide.ng-hide {
+  opacity: 0;
+  transition: 0.75s;
+}
+
+.hide.ng-show {
+  opacity: 1;
 }
 
 @media (max-width: 960px) {

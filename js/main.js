@@ -1,22 +1,11 @@
 (function(){
-  jQuery.fn.rotate = function(degrees) {
-    $(this).css({'-webkit-transform' : 'rotate('+ degrees +'deg)',
-                 '-moz-transform' : 'rotate('+ degrees +'deg)',
-                 '-ms-transform' : 'rotate('+ degrees +'deg)',
-                 'transform' : 'rotate('+ degrees +'deg)'});
-    return $(this);
-  };
-  var rotation = 0;
-
-  var app = angular.module('andySite', ['ui.router']);
+  var app = angular.module('andySite', ['ui.router', 'ngAnimate']);
 
   app.run( ['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $stateParams) {
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
 
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-        $('footer .fa').rotate(rotation);
-        rotation += 90;
     });
   }])
 
