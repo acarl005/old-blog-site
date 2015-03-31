@@ -1,3 +1,12 @@
+body {
+  font-family: 'varela round';
+}
+
+.nav {
+  font-family: avenir;
+  font-weight: lighter
+}
+
 #trash {
   background: white;
   border: none;
@@ -10,7 +19,7 @@
 }
 
 .btn {
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .form-inline .form-group {
@@ -18,8 +27,24 @@
 }
 
 td {
-  max-width: 140px;
   overflow: scroll;
+  white-space: nowrap;
+}
+
+.tname {
+  max-width: 140px;
+}
+
+.ttype {
+  max-width: 50px;
+}
+
+.tprice {
+  max-width: 35px;
+}
+
+div[class*=" col-"] {
+  padding: 0;
 }
 
 footer {
@@ -36,4 +61,12 @@ footer {
 
 .navbar-brand a {
   color: #ccc;
+}
+
+@media (max-width: 349px) {
+
+  .btn {
+    margin-right: 2px;
+  }
+
 }

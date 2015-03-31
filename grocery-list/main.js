@@ -70,9 +70,9 @@ var ListBody = React.createClass({
       var thisPrice = parseFloat(Math.round(item.price * 100) / 100).toFixed(2);
       return (
         <tr className="tableRow">
-          <td> {item.name} </td>
-          <td> {item.type} </td>
-          <td> ${thisPrice} </td>
+          <td className="tname"> {item.name} </td>
+          <td className="ttype"> {item.type} </td>
+          <td className="tprice"> ${thisPrice} </td>
         </tr>
       );
     });
@@ -191,7 +191,7 @@ var ListWindow = React.createClass({
       <div className="container">
 
         <div className="row">
-          <div className="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+          <div className="col-xs-11 col-sm-11 col-md-11 col-lg-11">
             <table className="table table-hover">
               <ListHeader list={this.state.data} />
               <ListBody list={this.state.data} />
