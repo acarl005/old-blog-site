@@ -47,7 +47,7 @@ test.remove(milk);
 test.sortType();
 
 
-//----------------------------------------
+//---------------------------------------------
 
 
 var ListHeader = React.createClass({
@@ -66,7 +66,7 @@ var ListHeader = React.createClass({
 
 var ListBody = React.createClass({
   render: function() {
-    var tableNodes = this.props.list.contents.map(function (item) {
+    var tableNodes = this.props.list.contents.map(function (item, i) {
       var thisPrice = parseFloat(Math.round(item.price * 100) / 100).toFixed(2);
       return (
         <tr className="tableRow">
@@ -106,7 +106,7 @@ var AddForm = React.createClass({
   },
   render: function() {
     return (
-      <form className="form-inline" onSubmit={this.addItem}>
+      <form className="form-inline" onSubmit={this.addItem} autoComplete="on">
           <div className="form-group">
             <input type="text" className="form-control" ref="name" placeholder="item name" />
           </div>
@@ -164,26 +164,27 @@ var ListWindow = React.createClass({
     return {data: this.props.data};
   },
   sortPrice: function(event) {
-    var newData = this.props.data.sortPrice();
+    var newData = this.state.data.sortPrice();
     this.setState({data: newData});
   },
   sortType: function(event) {
-    var newData = this.props.data.sortType();
+    var newData = this.state.data.sortType();
     this.setState({data: newData});
   },
   clearList: function(event) {
-    this.props.data = new List();
-    this.setState({data: this.props.data});
+    this.setState({data: new List()});
   },
   handleAddItem: function(item) {
-    this.props.data.add(item);
-    this.setState({data: this.props.data});
+    var newData = this.state.data;
+    newData.add(item);
+    this.setState({data: newData});
   },
   handleDelete: function (deleteThese) {
+    var newData = this.state.data;
     deleteThese.forEach(function(item) {
-      this.props.data.remove(item);
-    }.bind(this));
-    this.setState({data: this.props.data})
+      newData.remove(item);
+    });
+    this.setState({data: newData})
   },
   render: function() {
     return (
