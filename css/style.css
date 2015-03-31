@@ -14,7 +14,9 @@ a:hover {
 }
 
 code {
-  background-color: #E2F1FF;
+  color: #007A7A;
+  background-color: #E1FFF0;
+  font-family: menlo;
 }
 
 h2, h3, h4 {
