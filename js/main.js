@@ -70,7 +70,7 @@ $(document).ready(function() {
 
   $('#close').click(function() {
     $('#contact-menu').animate({
-      top: "-360px"
+      top: "-400px"
     }, 200);
   });
 });

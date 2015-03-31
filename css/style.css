@@ -250,7 +250,7 @@ iframe {
 
 #hex {
   width: 100%;
-  height: 18em;
+  height: 330px;
   background: url("../imgs/bg.jpg");
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -303,7 +303,7 @@ ol, ul {
 
 #contact-menu {
   position: absolute;
-  top: -360px;
+  top: -400px;
   left: 30%;
   right: 30%;
   background-color: white;
