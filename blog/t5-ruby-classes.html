@@ -30,7 +30,7 @@
     <img src="blog/imgs/enum5.png">
     <h6>Using an enumerator to get the effect of a hypothetical <code>#map_with_index</code>.</h6>
     <p>
-      Cheers! We've achieved the desired result more quickly using an enumerator! Using this approach you can also chain any other <code>Enumerable</code> method to gain an index as a parameter. For my DBC Gophers out there, I used this approach for challenge 5.6 in phase 0. Check out <a href="https://github.com/acarl005/phase-0-unit-2/blob/master/week-5/6-validate-credit-card/my_solution.rb">my solution on Github</a>!
+      Cheers! We've achieved the desired result more quickly using an enumerator! Using this approach you can also chain any other <code>Enumerable</code> method to gain an index as a parameter. Alternatively, you can use <code>Enumerable#with_index</code>. This method, when called on an enumerator, adds another parameter: the index. So typing <code>arr.map.with_index</code> produces the same net result as <code>arr.each_with_index.map</code>. This expands the possibilites even further. For example, <code>"iterate over us".each_char.with_index</code> has no enumerable counterpart since string are not strictly enumerable.
     </p>
   </section>
 </div>

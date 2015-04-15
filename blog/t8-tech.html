@@ -10,10 +10,10 @@
     <img src="blog/imgs/expo_recursion.png">
     <h6>A recursive method. It calls ITSELF.</h6>
     <p>
-      This method first checks if the exponent is 0. If so, it returns 1. It then multiplies the base by the output of, well, itself with the exponent decremented by one. The method will get repeated until the exponent eventually homes in on 1, stopping the repetition. In other words, the solution to 2<sup>4</sup> is trimmed down to 2<sup>3</sup> which is trimmed to 2<sup>2</sup> and so on.
+      This method first checks if the exponent is 0. If so, it returns 1. This is known as the <em>base case</em>. It's where the repetition ends. It then multiplies the base by the output of, well, itself with the exponent decremented by one. The method will get repeated until the exponent eventually homes in on 1, stopping the repetition. In other words, the solution to 2<sup>4</sup> is trimmed down to 2<sup>3</sup> which is trimmed to 2<sup>2</sup> and so on.
     </p>
     <p>
-      This program can also be written by using a simple loop or a <code>#times</code> method. In fact, doing so would produce a program that executes roughly 10 times faster. Writing a recursive function comes at a hefty performance cost. In some contexts, this is compensated for by a dramatic improvement in the readability of the code. Let's look at an example that is drastically simplified by using recursion: finding the <a href="http://en.wikipedia.org/wiki/Determinant">determinant of a matrix</a>.
+      This program can also be written by using a simple loop or a <code>#times</code> method. In fact, doing so would produce a program that executes roughly 10 times faster. Writing a recursive function can sometimes come at a performance cost. In some contexts, this is compensated for by a dramatic improvement in the readability of the code. Let's look at an example that is drastically simplified by using recursion: finding the <a href="http://en.wikipedia.org/wiki/Determinant">determinant of a matrix</a>.
     </p>
     <img src="blog/imgs/matrix.gif">
     <p>
