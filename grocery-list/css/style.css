@@ -2,6 +2,10 @@ body {
   font-family: 'varela round';
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .nav {
   font-family: avenir;
   font-weight: lighter
@@ -29,6 +33,7 @@ body {
 td {
   overflow: scroll;
   white-space: nowrap;
+  height: 40px;
 }
 
 .tname {
