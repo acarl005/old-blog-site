@@ -2,6 +2,7 @@ body {
   margin: auto;
   width: 100%;
   margin-bottom: 80px;
+  font-family: nunito;
 }
 
 a {
@@ -115,7 +116,6 @@ aside {
   background-color: rgba(255, 255, 255, 0.7);
   border: 1px solid gray;
   width: 19%;
-  font-family: avenir;
   float: right;
   margin-right: 40px;
   padding-bottom: 20px;
@@ -129,7 +129,6 @@ aside h4 {
   margin: auto;
   display: block;
   width: 80%;
-  font-family: avenir;
   padding: 10px;
 }
 
@@ -196,7 +195,6 @@ h6 {
   background-color: rgba(255, 255, 255, 0.7);
   border: 1px solid gray;
   width: 810px;
-  font-family: avenir;
   margin: auto;
   padding-bottom: 20px;
 }
@@ -210,7 +208,6 @@ h6 {
   background-color: rgba(255, 255, 255, 0.7);
   border: 1px solid gray;
   width: 68%;
-  font-family: avenir;
   margin-bottom: 20px;
   margin-left: 6%;
 }
@@ -225,7 +222,6 @@ h6 {
   background-color: rgba(255, 255, 255, 0.7);
   border: 1px solid gray;
   width: 25%;
-  font-family: avenir;
   margin-bottom: 20px;
   margin-right: 4%;
   margin-left: 4%;
@@ -297,9 +293,16 @@ iframe {
   width: 150px;
 }
 
+.shrinkkkk {
+  width: 80px;
+}
+
+.svg {
+  vertical-align: middle;
+}
+
 ol, ul {
   max-width: 100%;
-  overflow: scroll;
 }
 
 #contact-menu {
@@ -355,6 +358,10 @@ ol, ul {
 
 .hide.ng-show {
   opacity: 1;
+}
+
+.icons {
+  font-size: 80px;
 }
 
 @media (max-width: 960px) {
