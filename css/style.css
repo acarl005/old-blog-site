@@ -293,6 +293,14 @@ iframe {
   width: 150px;
 }
 
+.shrinkkkk {
+  width: 80px;
+}
+
+.svg {
+  vertical-align: middle;
+}
+
 ol, ul {
   max-width: 100%;
 }
@@ -353,7 +361,7 @@ ol, ul {
 }
 
 .icons {
-  font-size: 100px;
+  font-size: 80px;
 }
 
 @media (max-width: 960px) {
