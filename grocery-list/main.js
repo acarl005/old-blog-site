@@ -3,9 +3,6 @@ function Item(name, type, price) {
   this.type = type;
   this.price = price;
 }
-Item.prototype.toString = function() {
-  return this.name + ': $' + this.price;
-}
 
 function List() {
   this.contents = [];
@@ -17,13 +14,19 @@ List.prototype.add = function() {
   for (item in arguments) {
     this.contents.push(arguments[item]);
   };
+  this.save();
 }
 List.prototype.remove = function(item) {
-  var ind = this.contents.indexOf(item)
-  this.contents.splice(ind, 1)
+  var ind = this.contents.indexOf(item);
+  this.contents.splice(ind, 1);
+  this.save();
+}
+List.prototype.removeAll = function() {
+  this.contents = [];
+  this.save();
 }
 List.prototype.totalCost = function() {
-  return this.contents.map(function(item) {return +item.price}).reduce(function(a, b) {return a + b}, 0);
+  return this.contents.reduce(function(a, b) {return a + +b.price}, 0);
 }
 List.prototype.sortPrice = function() {
   this.contents.sort(function(a, b) {return b.price - a.price});
@@ -33,18 +36,32 @@ List.prototype.sortType = function() {
   this.contents.sort(function(a, b) {return b.type < a.type});
   return this;
 }
+List.prototype.save = function() {
+  localStorage.setItem('grocList', JSON.stringify(this.contents));
+}
 
-var milk = new Item('milk', 'dairy', 3)
-var oranges = new Item('oranges', 'fruit', 2)
-var avocados = new Item('avocados', 'fruit', 5)
-var steak = new Item('steak', 'meat', 10)
-var slimJim = new Item('slim jim', 'meat', 1)
 
-var test = new List(milk, oranges, steak)
-test.add(milk, avocados, slimJim)
+var storage = localStorage.getItem('grocList');
 
-test.remove(milk);
-test.sortType();
+if (storage) {
+  var list = new List();
+  storage = JSON.parse(storage);
+  storage.forEach(function(item) {
+    list.add(new Item(
+      item.name,
+      item.type,
+      item.price
+    ));
+  });
+} else {
+  var milk = new Item('milk', 'dairy', 3),
+      oranges = new Item('oranges', 'fruit', 2),
+      avocados = new Item('avocados', 'fruit', 5),
+      steak = new Item('steak', 'meat', 10),
+      slimJim = new Item('slim jim', 'meat', 1),
+      list = new List(milk, oranges, steak, avocados, slimJim);
+}
+
 
 
 //---------------------------------------------
@@ -173,13 +190,14 @@ var ListWindow = React.createClass({
   },
   clearList: function(event) {
     this.setState({data: new List()});
+    this.state.data.removeAll();
   },
   handleAddItem: function(item) {
     var newData = this.state.data;
     newData.add(item);
     this.setState({data: newData});
   },
-  handleDelete: function (deleteThese) {
+  handleDelete: function(deleteThese) {
     var newData = this.state.data;
     deleteThese.forEach(function(item) {
       newData.remove(item);
@@ -213,6 +231,6 @@ var ListWindow = React.createClass({
 });
 
 React.render(
-  <ListWindow data={test} />,
+  <ListWindow data={list} />,
   document.getElementById('content')
 );
