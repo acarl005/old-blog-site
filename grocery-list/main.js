@@ -160,7 +160,7 @@ var DeleteForm = React.createClass({
       );
     });
     return (
-      <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+      <div className="col-xs-1">
         <form id="delete" onSubmit={this.deleteStuff}>
           <table className="table table-hover">
             <thead><tr><th>
@@ -209,7 +209,7 @@ var ListWindow = React.createClass({
       <div className="container">
 
         <div className="row">
-          <div className="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+          <div className="col-xs-11">
             <table className="table table-hover">
               <ListHeader list={this.state.data} />
               <ListBody list={this.state.data} />
